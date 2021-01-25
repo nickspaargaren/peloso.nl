@@ -33,5 +33,23 @@ export default {
       title: 'Residence',
       type: 'string',
     },
+    {
+      name: 'image',
+      title: 'Profile image',
+      type: 'image',
+      options: {
+        hotspot: true
+      }
+    },
+    {
+      name: 'phone',
+      title: 'Phone number',
+      type: 'string'
+    },
+    {
+      name: 'email',
+      title: 'Email address',
+      type: 'string'
+    },
   ]
 }
