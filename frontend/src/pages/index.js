@@ -1,12 +1,35 @@
 import * as React from "react"
 import '../index.css';
 import { useStaticQuery, graphql } from "gatsby";
+import Img from "gatsby-image"
 
 const Home = () => {
 
-  const { skills, languages, interests, work, education } = useStaticQuery(
+  const { general, skills, languages, interests, work, education } = useStaticQuery(
     graphql`
     query {
+
+      general: sanityGeneral {
+        name
+        nationality
+        residence
+        lastname
+        birthplace
+        birthdate
+        image {
+          asset {
+            fluid(maxWidth: 200, maxHeight: 200, toFormat: WEBP) {
+              base64
+              aspectRatio
+              src
+              srcSet
+              sizes
+              srcSetWebp
+              srcWebp
+            }
+          }
+        }
+      }
 
       skills: allSanitySkills {
         nodes {
@@ -51,7 +74,20 @@ const Home = () => {
   )
 
   return (
-    <>
+    <div className="houder">
+      <div className="inhoud header">
+        <div className="profileimage"><Img fluid={general.image.asset.fluid} alt="" loading="lazy" /></div>
+        <div className="blok">
+          <h1>{general.name} {general.lastname}</h1>
+          <div>{general.nationality}</div>
+          <div>{general.residence}</div>
+          <div>{general.birthplace}</div>
+          <div>{general.birthdate}</div>
+          <div>{general.phone}</div>
+          <div>{general.email}</div>
+        </div>
+      </div>
+
       <div className="inhoud">
         <aside>
 
@@ -108,7 +144,7 @@ const Home = () => {
             </div>
         </main>
       </div>
-    </>
+    </div>
   )
 }
 
