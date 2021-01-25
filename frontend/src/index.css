@@ -8,7 +8,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #fbfbfb;}
 
-.houder {background: #fff; border: 1px solid #eee; margin: 100px; }
+.houder {background: #fff; border: 1px solid #eee; margin: 100px auto; max-width: 75%;}
 .houder .inhoud {display: grid; grid-template-columns: 400px 1fr;}
 .houder .inhoud .blok  {padding: 50px; border-bottom: 1px solid #eee;}
 .houder .inhoud .blok:last-child {border-bottom: 0;}
@@ -17,7 +17,15 @@ body {
 .houder .inhoud.header {background: #c8d2d0;}
 
 h1, h2, h3 {color: #292a2c; margin: 0 0 20px;}
+
 h3 {margin: 0;}
+
+h2 {display: flex;}
+h2 svg {
+  margin: auto 10px auto 0;
+  font-size: 18px;
+  opacity: .6;
+}
 
 .tag {display: inline-block; padding: 5px; border: 2px solid #eee; border-radius: 3px; margin: 0 5px 5px 0;}
 
@@ -25,7 +33,7 @@ h3 {margin: 0;}
 .experience:last-child {margin-bottom: 0;}
 
 @media screen and (max-width: 1100px) {
-  .houder {margin: 10px;}
+  .houder {max-width: 100%; margin: 10px;}
   .houder .inhoud {display: block;} 
   .houder .inhoud .blok  {padding: 20px;}
   .houder .inhoud aside .blok:last-child {border-bottom: 1px solid #eee;}

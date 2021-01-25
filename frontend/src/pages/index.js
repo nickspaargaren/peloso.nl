@@ -54,8 +54,8 @@ const Home = () => {
           title
           organization
           location
-          datefrom
-          dateto
+          datefrom(formatString: "DD MMM YYYY")
+          dateto(formatString: "DD MMM YYYY")
         }
       }
 
@@ -64,8 +64,8 @@ const Home = () => {
           title
           location
           institution
-          datefrom
-          dateto
+          datefrom(formatString: "DD MMM YYYY")
+          dateto(formatString: "DD MMM YYYY")
         }
       }
 
