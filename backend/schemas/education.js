@@ -18,5 +18,15 @@ export default {
       title: 'Place of Education',
       type: 'string',
     },
+    {
+      name: 'datefrom',
+      title: 'Date from',
+      type: 'date',
+    },
+    {
+      name: 'dateto',
+      title: 'Date to',
+      type: 'date',
+    },
   ]
 }
