@@ -6,15 +6,15 @@ body {
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #fbfbfb;}
+  background-color: #2ebcff;}
 
-.houder {background: #fff; border: 1px solid #eee; margin: 100px auto; max-width: 75%;}
+.houder {background: #fff; box-shadow: 40px 40px 0 0 rgba(0,0,0,.15); margin: 100px auto; max-width: 75%;}
 .houder .inhoud {display: grid; grid-template-columns: 400px 1fr;}
 .houder .inhoud .blok  {padding: 50px; border-bottom: 1px solid #eee;}
 .houder .inhoud .blok:last-child {border-bottom: 0;}
 .houder .inhoud aside {border-right: 1px solid #eee;}
 
-.houder .inhoud.header {background: #c8d2d0; color: #000;}
+.houder .inhoud.header {background: #eee; color: #000;}
 
 h1, h2, h3 {color: #292a2c; margin: 0 0 20px;}
 
