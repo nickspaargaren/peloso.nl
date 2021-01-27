@@ -38,6 +38,9 @@ small {
 
 .tag {display: inline-block; padding: 5px; border: 2px solid #ddd; border-radius: 3px; margin: 0 5px 5px 0;}
 
+.lijst .item {margin-bottom: 20px;}
+.lijst .item:last-child {margin-bottom: 0;}
+
 .experiences {border-left: 3px solid #ddd; padding-left: 20px;}
 .experiences > div {margin-bottom: 20px;}
 .experiences > div h3 {position: relative;}
