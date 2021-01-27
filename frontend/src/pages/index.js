@@ -164,7 +164,7 @@ const Home = () => {
                     <div key={key}>
                       <h3>{item.title}</h3>
                       <div>{item.organization}, {item.location}</div>
-                      <small><i><span>{item.datefrom}</span> - <span>{item.dateto}</span></i></small>
+                      <small><i><span>{item.datefrom}</span> - <span>{!item.dateto ? "Present" : item.dateto}</span></i></small>
                     </div>
                   ))}
                 </div>
@@ -176,7 +176,7 @@ const Home = () => {
                     <div key={key}>
                       <h3>{item.title}</h3>
                       <div>{item.institution}, {item.location}</div>
-                      <small><i><span>{item.datefrom}</span> - <span>{item.dateto}</span></i></small>
+                      <small><i><span>{item.datefrom}</span> - <span>{!item.dateto ? "Present" : item.dateto}</span></i></small>
                     </div>
                   ))}
                 </div>
