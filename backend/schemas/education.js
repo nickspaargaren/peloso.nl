@@ -19,6 +19,12 @@ export default {
       type: 'string',
     },
     {
+      title: 'Description', 
+      name: 'description',
+      type: 'array', 
+      of: [{type: 'block'}]
+    },
+    {
       name: 'datefrom',
       title: 'Date from',
       type: 'date',

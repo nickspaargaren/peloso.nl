@@ -14,6 +14,12 @@ export default {
       type: 'string',
     },
     {
+      title: 'Description', 
+      name: 'description',
+      type: 'array', 
+      of: [{type: 'block'}]
+    },
+    {
       name: 'birthdate',
       title: 'Date of birth',
       type: 'date',
