@@ -22,11 +22,17 @@ export default {
       name: 'datefrom',
       title: 'Date from',
       type: 'date',
+      options: {
+        dateFormat: 'MM-YYYY',
+      }
     },
     {
       name: 'dateto',
       title: 'Date to',
       type: 'date',
+      options: {
+        dateFormat: 'MM-YYYY',
+      }
     },
   ]
 }
