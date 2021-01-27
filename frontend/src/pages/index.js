@@ -44,6 +44,7 @@ const Home = () => {
       languages: allSanityLanguages {
         nodes {
           title
+          subtitle
         }
       }
 
@@ -135,11 +136,14 @@ const Home = () => {
 
             <div className="blok">
               <h2>Languages</h2>
-              {languages.nodes.map((item, key) => (
-                <div className="tag" key={key}>
-                  {item.title}
-                </div>
-              ))}
+              <div className="lijst">
+                {languages.nodes.map((item, key) => (
+                  <div className="item" key={key}>
+                    {item.title}
+                    <small>{item.subtitle}</small>
+                  </div>
+                ))}
+              </div>
             </div>
 
             <div className="blok">
