@@ -8,5 +8,10 @@ export default {
       title: 'Title',
       type: 'string',
     },
+    {
+      name: 'subtitle',
+      title: 'Proficiency',
+      type: 'string',
+    },
   ]
 }
