@@ -3,6 +3,7 @@ import '../index.css';
 import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image"
+import BlockContent from "@sanity/block-content-to-react"
 
 const Home = () => {
 
@@ -12,9 +13,10 @@ const Home = () => {
 
       general: sanityGeneral {
         name
+        lastname
+        _rawDescription
         nationality
         residence
-        lastname
         birthplace
         birthdate(formatString: "D MMMM YYYY")
         age: birthdate(fromNow: true)
@@ -54,21 +56,23 @@ const Home = () => {
         }
       }
 
-      work: allSanityWork (sort: {fields: datefrom, order: DESC}) {
-        nodes {
-          title
-          organization
-          location
-          datefrom(formatString: "MMM YYYY")
-          dateto(formatString: "MMM YYYY")
+        work: allSanityWork (sort: {fields: datefrom, order: DESC}) {
+          nodes {
+            title
+            organization
+            location
+            _rawDescription
+            datefrom(formatString: "MMM YYYY")
+            dateto(formatString: "MMM YYYY")
+          }
         }
-      }
 
       education: allSanityEducation (sort: {fields: datefrom, order: DESC}) {
         nodes {
           title
-          location
           institution
+          location
+          _rawDescription
           datefrom(formatString: "MMM YYYY")
           dateto(formatString: "MMM YYYY")
         }
@@ -93,6 +97,7 @@ const Home = () => {
           <div className="profileimage"><Img fluid={general.image.asset.fluid} alt="" loading="lazy" /></div>
           <div className="blok" style={{display: 'flex', flexDirection: 'column'}}>
             <h1>{general.name} {general.lastname}</h1>
+            {general._rawDescription && <BlockContent blocks={general._rawDescription} />}
             <div className="general">
                 <div>
                   <small>Nationality</small>
@@ -157,6 +162,7 @@ const Home = () => {
 
           </aside>
           <main>
+
             <div className="blok">
                 <h2>Work</h2>
                 <div className="experiences">
@@ -165,10 +171,12 @@ const Home = () => {
                       <h3>{item.title}</h3>
                       <div>{item.organization}, {item.location}</div>
                       <small><i><span>{item.datefrom}</span> - <span>{!item.dateto ? "Present" : item.dateto}</span></i></small>
+                      {item._rawDescription && <BlockContent blocks={item._rawDescription} />}
                     </div>
                   ))}
                 </div>
               </div>
+
               <div className="blok">
                 <h2>Education</h2>
                 <div className="experiences">
@@ -177,10 +185,12 @@ const Home = () => {
                       <h3>{item.title}</h3>
                       <div>{item.institution}, {item.location}</div>
                       <small><i><span>{item.datefrom}</span> - <span>{!item.dateto ? "Present" : item.dateto}</span></i></small>
+                      {item._rawDescription && <BlockContent blocks={item._rawDescription} />}
                     </div>
                   ))}
                 </div>
               </div>
+              
           </main>
         </div>
       </div>
