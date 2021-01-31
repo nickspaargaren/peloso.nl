@@ -71,7 +71,7 @@ ul li:last-child {margin-bottom: 0px;}
 @media print {
   .houder {max-width: none; margin: 0; box-shadow: none;}
   .houder .inhoud {display: block;}
-  .houder .inhoud.header {display: flex;}
+  .houder .inhoud.header {display: flex; background: #fff;}
   .houder .inhoud.header > div:first-child {width: 400px;}
-  .houder .inhoud .blok {padding: 10px; border-bottom: 0;}
+  .houder .inhoud .blok {padding: 10px; border: 0;}
 }
