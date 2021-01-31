@@ -98,7 +98,15 @@ const Home = () => {
           <div className="blok" style={{display: 'flex', flexDirection: 'column'}}>
             <h1>{general.name} {general.lastname}</h1>
             {general._rawDescription && <BlockContent blocks={general._rawDescription} />}
-            <div className="general">
+          </div>
+        </div>
+
+        <div className="inhoud">
+          <aside>
+
+            <div className="blok">
+              <h2>Contact</h2>
+              <div className="general">
                 <div>
                   <small>Nationality</small>
                   {general.nationality}
@@ -123,12 +131,8 @@ const Home = () => {
                   <small>Email</small>
                   <a href={`mailto:${general.email}`}>{general.email}</a>
                 </div>
+              </div>
             </div>
-          </div>
-        </div>
-
-        <div className="inhoud">
-          <aside>
 
             <div className="blok">
               <h2>Skills</h2>
