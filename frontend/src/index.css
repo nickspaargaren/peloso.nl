@@ -69,6 +69,7 @@ ul li:last-child {margin-bottom: 0px;}
 }
 
 @media print {
+  body {background: #fff;}
   .houder {max-width: none; margin: 0; box-shadow: none;}
   .houder .inhoud {display: block;}
   .houder .inhoud.header {display: flex; background: #fff;}

@@ -167,11 +167,11 @@ const Home = () => {
           </aside>
           <main>
 
-            <div className="blok">
+            <div className="blok" style={{breakBefore: "page"}}>
                 <h2>Work</h2>
                 <div className="experiences">
                   {work.nodes.map((item, key) => (
-                    <div key={key}>
+                    <div key={key} style={{breakInside: "avoid"}}>
                       <h3>{item.title}</h3>
                       <div>{item.organization}, {item.location}</div>
                       <small><i><span>{item.datefrom}</span> - <span>{!item.dateto ? "Present" : item.dateto}</span></i></small>
@@ -181,11 +181,11 @@ const Home = () => {
                 </div>
               </div>
 
-              <div className="blok">
+              <div className="blok" style={{breakBefore: "page"}}>
                 <h2>Education</h2>
                 <div className="experiences">
                   {education.nodes.map((item, key) => (
-                    <div key={key}>
+                    <div key={key} style={{breakInside: "avoid"}}>
                       <h3>{item.title}</h3>
                       <div>{item.institution}, {item.location}</div>
                       <small><i><span>{item.datefrom}</span> - <span>{!item.dateto ? "Present" : item.dateto}</span></i></small>
