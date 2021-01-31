@@ -43,7 +43,7 @@ const Home = () => {
         }
       }
 
-      languages: allSanityLanguages {
+      languages: allSanityLanguages(sort: {fields: order, order: ASC}) {
         nodes {
           title
           subtitle
