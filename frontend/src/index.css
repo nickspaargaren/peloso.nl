@@ -67,3 +67,11 @@ ul li:last-child {margin-bottom: 0px;}
   .houder .inhoud .blok  {padding: 20px;}
   .houder .inhoud aside .blok:last-child {border-bottom: 1px solid #eee;}
 }
+
+@media print {
+  .houder {max-width: none; margin: 0; box-shadow: none;}
+  .houder .inhoud {display: block;}
+  .houder .inhoud.header {display: flex;}
+  .houder .inhoud.header > div:first-child {width: 400px;}
+  .houder .inhoud .blok {padding: 10px; border-bottom: 0;}
+}
