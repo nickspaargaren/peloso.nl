@@ -69,7 +69,8 @@ ul li:last-child {margin-bottom: 0px;}
 }
 
 @media print {
-  body {background: #fff;}
+  body {background: #fff;font-size: 13px;}
+  small {font-size: 11px;}
   .houder {max-width: none; margin: 0; box-shadow: none;}
   .houder .inhoud {display: block;}
   .houder .inhoud.header {display: flex; background: #fff;}
