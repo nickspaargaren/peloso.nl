@@ -73,5 +73,6 @@ ul li:last-child {margin-bottom: 0px;}
   .houder .inhoud {display: block;}
   .houder .inhoud.header {display: flex; background: #fff;}
   .houder .inhoud.header > div:first-child {width: 400px;}
+  .houder .inhoud aside {border: 0;}
   .houder .inhoud .blok {padding: 10px; border: 0;}
 }
