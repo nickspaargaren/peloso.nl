@@ -1,3 +1,7 @@
+:root {
+  --main-color: #2ebcff;
+}
+
 body {
   margin: 0;
   font-size: 15px;
@@ -6,7 +10,8 @@ body {
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #2ebcff;}
+  background-color: var(--main-color);
+}
 
 .houder {background: #fff; box-shadow: 40px 40px 0 0 rgba(0,0,0,.15); margin: 100px auto; max-width: 75%;}
 .houder .inhoud {display: grid; grid-template-columns: 400px 1fr;}
@@ -27,6 +32,8 @@ h2 svg {
   opacity: .6;
 }
 
+a {color: var(--main-color);}
+
 p {margin: 0 0 20px; line-height: 1.75em;}
 
 small {
@@ -38,7 +45,7 @@ small {
 
 ul {padding: 0; list-style: none;}
 ul li {display: grid; grid-template-columns: 11px 1fr; grid-gap: 10px; margin-bottom: 10px;}
-ul li::before {content:"✓"; color: #2ebcff; margin-right: .25em;}
+ul li::before {content:"✓"; color: var(--main-color); margin-right: .25em;}
 ul li:last-child {margin-bottom: 0px;}
 
 .general {margin-top: auto; display: grid; grid-template-columns: repeat(auto-fit,minmax(210px,1fr)); grid-gap: 20px;}
