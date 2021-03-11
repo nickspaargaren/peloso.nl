@@ -121,7 +121,7 @@ const Home = () => {
                 </div>
                 <div>
                   <small>Date of birth</small>
-                  {general.birthdate} <span style={{opacity: '.6'}}>({age})</span>
+                  {general.birthdate} <span style={{opacity: '.75'}}>({age})</span>
                 </div>
                 <div>
                   <small>Phone number</small>

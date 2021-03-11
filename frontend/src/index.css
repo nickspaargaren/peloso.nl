@@ -32,7 +32,7 @@ h2 svg {
   opacity: .6;
 }
 
-a {color: var(--main-color);}
+a {color: inherit;}
 
 p {margin: 0 0 20px; line-height: 1.75em;}
 
