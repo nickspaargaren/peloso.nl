@@ -14,6 +14,14 @@ export default {
       type: 'string',
     },
     {
+      name: 'logo',
+      title: 'Institution logo',
+      type: 'image',
+      options: {
+        hotspot: true
+      }
+    },
+    {
       name: 'location',
       title: 'Place of Education',
       type: 'string',
