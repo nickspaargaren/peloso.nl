@@ -10,9 +10,10 @@ module.exports = {
         dataset: "production",
       },
     },
+    "gatsby-plugin-image",
     "gatsby-plugin-sharp",
-    "gatsby-plugin-react-helmet",
     "gatsby-transformer-sharp",
+    "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-source-filesystem",
       options: {

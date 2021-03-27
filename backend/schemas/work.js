@@ -14,6 +14,14 @@ export default {
       type: 'string',
     },
     {
+      name: 'logo',
+      title: 'Organization logo',
+      type: 'image',
+      options: {
+        hotspot: true
+      }
+    },
+    {
       name: 'location',
       title: 'Location',
       type: 'string',
