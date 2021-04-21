@@ -1,6 +1,12 @@
 export default {
   name: 'general',
   title: 'General',
+  __experimental_actions: [
+    /*'create',*/
+    'update',
+    /*'delete',*/
+    'publish'
+  ],
   type: 'document',
   fields: [
     {
