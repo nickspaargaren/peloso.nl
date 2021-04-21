@@ -1,7 +1,10 @@
+import { AiOutlineShop } from 'react-icons/ai'
+
 export default {
   name: 'work',
   title: 'Work',
   type: 'document',
+  icon: AiOutlineShop,
   fields: [
     {
       name: 'title',
