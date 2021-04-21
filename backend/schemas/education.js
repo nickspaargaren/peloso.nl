@@ -1,7 +1,10 @@
+import { AiOutlineBook } from 'react-icons/ai'
+
 export default {
   name: 'education',
   title: 'Education',
   type: 'document',
+  icon: AiOutlineBook,
   fields: [
     {
       name: 'title',

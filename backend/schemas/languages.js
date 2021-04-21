@@ -1,7 +1,10 @@
+import { AiOutlineComment } from 'react-icons/ai'
+
 export default {
   name: 'languages',
   title: 'Languages',
   type: 'document',
+  icon: AiOutlineComment,
   fields: [
     {
       name: 'title',
