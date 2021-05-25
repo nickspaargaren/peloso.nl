@@ -174,16 +174,14 @@ const Home = () => {
                   {work.nodes.map((item, key) => (
                     <div key={key} style={{breakInside: "avoid"}}>
                       <div className="header">
-                        <div>{item.logo ? <GatsbyImage image={item.logo.asset.gatsbyImageData} /> : <div className="placeholder"></div>}</div>
+                        <div>{item.logo ? <GatsbyImage image={item.logo.asset.gatsbyImageData} alt={`${item.organization} logo`} /> : <div className="placeholder"></div>}</div>
                         <div>
                           <h3>{item.title}</h3>
                           <div>{item.organization}, {item.location}</div>
                           <small><i><span>{item.datefrom}</span> - <span>{item.dateto ? item.dateto : "Present"}</span></i></small>
                           {item._rawDescription && <BlockContent blocks={item._rawDescription} />}
                         </div>
-                        
                       </div>
-                      
                     </div>
                   ))}
                 </div>
@@ -195,16 +193,14 @@ const Home = () => {
                   {education.nodes.map((item, key) => (
                     <div key={key} style={{breakInside: "avoid"}}>
                       <div className="header">
-                        <div>{item.logo ? <GatsbyImage image={item.logo.asset.gatsbyImageData} /> : <div className="placeholder"></div>}</div>
+                        <div>{item.logo ? <GatsbyImage image={item.logo.asset.gatsbyImageData} alt={`${item.institution} logo`} /> : <div className="placeholder"></div>}</div>
                         <div>
                           <h3>{item.title}</h3>
                           <div>{item.institution}, {item.location}</div>
                           <small><i><span>{item.datefrom}</span> - <span>{item.dateto ? item.dateto : "Present"}</span></i></small>
                           {item._rawDescription && <BlockContent blocks={item._rawDescription} />}
                         </div>
-                        
                       </div>
-                      
                     </div>
                   ))}
                 </div>
