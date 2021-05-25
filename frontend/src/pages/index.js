@@ -84,7 +84,6 @@ const Home = () => {
     `
   )
 
-  let age = general.age.replace(/\D/g,'');
 
   return (
     <>
@@ -123,7 +122,7 @@ const Home = () => {
                 </div>
                 <div>
                   <small>Date of birth</small>
-                  {general.birthdate} <span style={{opacity: '.75'}}>({age})</span>
+                  {general.birthdate}
                 </div>
                 <div>
                   <small>Phone number</small>
