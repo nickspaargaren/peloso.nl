@@ -4,6 +4,56 @@ import {Helmet} from 'react-helmet';
 import {useStaticQuery, graphql} from 'gatsby';
 import {GatsbyImage} from 'gatsby-plugin-image';
 import BlockContent from '@sanity/block-content-to-react';
+import dayjs from 'dayjs';
+var duration = require('dayjs/plugin/duration');
+dayjs.extend(duration);
+
+const difference = (datefrom, dateto) => {
+  let {years, months, days} = dayjs.duration(dateto.diff(datefrom)).$d;
+
+  if (days > 0) {
+    months = months + 1;
+  }
+
+  if (months === 12) {
+    months = 0;
+    years = years + 1;
+  }
+
+  if (years === 0 && months === 0) {
+    return;
+  }
+
+  if (years === 0 && months === 1) {
+    return `${months} month`;
+  }
+
+  if (years === 0 && months > 1) {
+    return `${months} months`;
+  }
+
+  if (years === 1 && months === 0) {
+    return `${years} year`;
+  }
+
+  if (years === 1 && months === 1) {
+    return `${years} year, ${months} month`;
+  }
+
+  if (years === 1 && months > 1) {
+    return `${years} year, ${months} months`;
+  }
+
+  if (years > 1 && months === 0) {
+    return `${years} years`;
+  }
+
+  if (years > 1 && months > 1) {
+    return `${years} years, ${months} months`;
+  }
+
+  return;
+};
 
 const Home = () => {
   const {general, skills, languages, interests, work, education} =
@@ -58,8 +108,8 @@ const Home = () => {
               }
               location
               _rawDescription
-              datefrom(formatString: "MMM YYYY")
-              dateto(formatString: "MMM YYYY")
+              datefrom
+              dateto
             }
           }
 
@@ -74,8 +124,8 @@ const Home = () => {
               }
               location
               _rawDescription
-              datefrom(formatString: "MMM YYYY")
-              dateto(formatString: "MMM YYYY")
+              datefrom
+              dateto
             }
           }
         }
@@ -179,37 +229,75 @@ const Home = () => {
             <div className="blok" style={{breakBefore: 'page'}}>
               <h2>Work</h2>
               <div className="experiences">
-                {work.nodes.map((item, key) => (
-                  <div key={key} style={{breakInside: 'avoid'}}>
-                    <div className="header">
-                      <div>
-                        {item.logo ? (
-                          <GatsbyImage
-                            image={item.logo.asset.gatsbyImageData}
-                            alt={`${item.organization} logo`}
-                          />
-                        ) : (
-                          <div className="placeholder"></div>
-                        )}
-                      </div>
-                      <div>
-                        <h3>{item.title}</h3>
+                {work.nodes.map((item, key) => {
+                  return (
+                    <div key={key} style={{breakInside: 'avoid'}}>
+                      <div className="header">
                         <div>
-                          {item.organization}, {item.location}
+                          {item.logo ? (
+                            <GatsbyImage
+                              image={item.logo.asset.gatsbyImageData}
+                              alt={`${item.organization} logo`}
+                            />
+                          ) : (
+                            <div className="placeholder"></div>
+                          )}
                         </div>
-                        <small>
-                          <i>
-                            <span>{item.datefrom}</span> -{' '}
-                            <span>{item.dateto ? item.dateto : 'Present'}</span>
-                          </i>
-                        </small>
-                        {item._rawDescription && (
-                          <BlockContent blocks={item._rawDescription} />
-                        )}
+                        <div>
+                          <h3>{item.title}</h3>
+                          <div>
+                            {item.organization}, {item.location}
+                          </div>
+                          <small>
+                            <i>
+                              <span>
+                                {dayjs(`${item.datefrom}`)
+                                  .format('MMM YYYY')
+                                  .toLowerCase()}
+                              </span>{' '}
+                              -{' '}
+                              <span>
+                                {item.dateto
+                                  ? dayjs(`${item.dateto}`)
+                                      .format('MMM YYYY')
+                                      .toLowerCase()
+                                  : 'Present'}
+                              </span>{' '}
+                              {item.dateto ? (
+                                <>
+                                  -{' '}
+                                  <span>
+                                    <strong>
+                                      {difference(
+                                        dayjs(item.datefrom),
+                                        dayjs(item.dateto),
+                                      )}
+                                    </strong>
+                                  </span>
+                                </>
+                              ) : (
+                                <>
+                                  -{' '}
+                                  <span>
+                                    <strong>
+                                      {difference(
+                                        dayjs(item.datefrom),
+                                        dayjs(),
+                                      )}
+                                    </strong>
+                                  </span>
+                                </>
+                              )}
+                            </i>
+                          </small>
+                          {item._rawDescription && (
+                            <BlockContent blocks={item._rawDescription} />
+                          )}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
 
@@ -236,8 +324,41 @@ const Home = () => {
                         </div>
                         <small>
                           <i>
-                            <span>{item.datefrom}</span> -{' '}
-                            <span>{item.dateto ? item.dateto : 'Present'}</span>
+                            <span>
+                              {dayjs(`${item.datefrom}`)
+                                .format('MMM YYYY')
+                                .toLowerCase()}
+                            </span>{' '}
+                            -{' '}
+                            <span>
+                              {item.dateto
+                                ? dayjs(`${item.dateto}`)
+                                    .format('MMM YYYY')
+                                    .toLowerCase()
+                                : 'Present'}
+                            </span>{' '}
+                            {item.dateto ? (
+                              <>
+                                -{' '}
+                                <span>
+                                  <strong>
+                                    {difference(
+                                      dayjs(item.datefrom),
+                                      dayjs(item.dateto),
+                                    )}
+                                  </strong>
+                                </span>
+                              </>
+                            ) : (
+                              <>
+                                -{' '}
+                                <span>
+                                  <strong>
+                                    {difference(dayjs(item.datefrom), dayjs())}
+                                  </strong>
+                                </span>
+                              </>
+                            )}
                           </i>
                         </small>
                         {item._rawDescription && (
