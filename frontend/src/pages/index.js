@@ -8,6 +8,18 @@ import dayjs from 'dayjs';
 var duration = require('dayjs/plugin/duration');
 dayjs.extend(duration);
 
+const plural = (amount, text) => {
+  if (amount === 0) {
+    return '';
+  }
+
+  if (amount > 1 || amount === 0) {
+    return `${amount} ${text}s`;
+  }
+
+  return `${amount} ${text}`;
+};
+
 const difference = (datefrom, dateto) => {
   let {years, months, days} = dayjs.duration(dateto.diff(datefrom)).$d;
 
@@ -20,39 +32,7 @@ const difference = (datefrom, dateto) => {
     years = years + 1;
   }
 
-  if (years === 0 && months === 0) {
-    return;
-  }
-
-  if (years === 0 && months === 1) {
-    return `${months} month`;
-  }
-
-  if (years === 0 && months > 1) {
-    return `${months} months`;
-  }
-
-  if (years === 1 && months === 0) {
-    return `${years} year`;
-  }
-
-  if (years === 1 && months === 1) {
-    return `${years} year, ${months} month`;
-  }
-
-  if (years === 1 && months > 1) {
-    return `${years} year, ${months} months`;
-  }
-
-  if (years > 1 && months === 0) {
-    return `${years} years`;
-  }
-
-  if (years > 1 && months > 1) {
-    return `${years} years, ${months} months`;
-  }
-
-  return;
+  return `${plural(years, 'year')} ${plural(months, 'month')}`;
 };
 
 const Home = () => {
