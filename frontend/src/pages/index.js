@@ -1,27 +1,16 @@
 import * as React from 'react';
 import '../index.css';
-import {Helmet} from 'react-helmet';
-import {useStaticQuery, graphql} from 'gatsby';
-import {GatsbyImage} from 'gatsby-plugin-image';
+import { Helmet } from 'react-helmet';
+import { useStaticQuery, graphql } from 'gatsby';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import BlockContent from '@sanity/block-content-to-react';
 import dayjs from 'dayjs';
+import plural from '../plural';
+
 var duration = require('dayjs/plugin/duration');
 dayjs.extend(duration);
-
-const plural = (amount, text) => {
-  if (amount === 0) {
-    return '';
-  }
-
-  if (amount > 1 || amount === 0) {
-    return `${amount} ${text}s`;
-  }
-
-  return `${amount} ${text}`;
-};
-
 const difference = (datefrom, dateto) => {
-  let {years, months, days} = dayjs.duration(dateto.diff(datefrom)).$d;
+  let { years, months, days } = dayjs.duration(dateto.diff(datefrom)).$d;
 
   if (days > 0) {
     months = months + 1;
@@ -36,7 +25,7 @@ const difference = (datefrom, dateto) => {
 };
 
 const Home = () => {
-  const {general, skills, languages, interests, work, education} =
+  const { general, skills, languages, interests, work, education } =
     useStaticQuery(
       graphql`
         query {
@@ -64,7 +53,7 @@ const Home = () => {
             }
           }
 
-          languages: allSanityLanguages(sort: {fields: order, order: ASC}) {
+          languages: allSanityLanguages(sort: { fields: order, order: ASC }) {
             nodes {
               title
               subtitle
@@ -77,7 +66,7 @@ const Home = () => {
             }
           }
 
-          work: allSanityWork(sort: {fields: datefrom, order: DESC}) {
+          work: allSanityWork(sort: { fields: datefrom, order: DESC }) {
             nodes {
               title
               organization
@@ -93,7 +82,9 @@ const Home = () => {
             }
           }
 
-          education: allSanityEducation(sort: {fields: datefrom, order: DESC}) {
+          education: allSanityEducation(
+            sort: { fields: datefrom, order: DESC }
+          ) {
             nodes {
               title
               institution
@@ -132,7 +123,7 @@ const Home = () => {
           </div>
           <div
             className="blok"
-            style={{display: 'flex', flexDirection: 'column'}}
+            style={{ display: 'flex', flexDirection: 'column' }}
           >
             <h1>
               {general.name} {general.lastname}
@@ -206,12 +197,12 @@ const Home = () => {
             </div>
           </aside>
           <main>
-            <div className="blok" style={{breakBefore: 'page'}}>
+            <div className="blok" style={{ breakBefore: 'page' }}>
               <h2>Work</h2>
               <div className="experiences">
                 {work.nodes.map((item, key) => {
                   return (
-                    <div key={key} style={{breakInside: 'avoid'}}>
+                    <div key={key} style={{ breakInside: 'avoid' }}>
                       <div className="header">
                         <div>
                           {item.logo ? (
@@ -281,11 +272,11 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="blok" style={{breakBefore: 'page'}}>
+            <div className="blok" style={{ breakBefore: 'page' }}>
               <h2>Education</h2>
               <div className="experiences">
                 {education.nodes.map((item, key) => (
-                  <div key={key} style={{breakInside: 'avoid'}}>
+                  <div key={key} style={{ breakInside: 'avoid' }}>
                     <div className="header">
                       <div>
                         {item.logo ? (
