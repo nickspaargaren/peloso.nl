@@ -18,7 +18,7 @@
     "@sanity/block-content-to-react": "^3.0.0",
     "babel-eslint": "^10.1.0",
     "dayjs": "^1.10.7",
-    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "gatsby": "^3.14.1",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-image": "^1.14.0",

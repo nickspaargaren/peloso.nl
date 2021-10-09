@@ -13,5 +13,6 @@ module.exports = {
   },
   rules: {
     'prettier/prettier': 'warn',
+    'object-curly-spacing': ['error', 'always'],
   },
 };
