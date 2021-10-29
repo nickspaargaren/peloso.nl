@@ -54,12 +54,14 @@ const Home = () => {
 
           skills: allSanitySkills {
             nodes {
+              id
               title
             }
           }
 
           languages: allSanityLanguages(sort: { fields: order, order: ASC }) {
             nodes {
+              id
               title
               subtitle
             }
@@ -67,12 +69,14 @@ const Home = () => {
 
           interests: allSanityInterests {
             nodes {
+              id
               title
             }
           }
 
           work: allSanityWork(sort: { fields: datefrom, order: DESC }) {
             nodes {
+              id
               title
               organization
               logo {
@@ -91,6 +95,7 @@ const Home = () => {
             sort: { fields: datefrom, order: DESC }
           ) {
             nodes {
+              id
               title
               institution
               logo {
@@ -177,8 +182,8 @@ const Home = () => {
 
             <div className="blok">
               <h2>Skills</h2>
-              {skills.nodes.map((item, key) => (
-                <div className="tag" key={key}>
+              {skills.nodes.map((item) => (
+                <div className="tag" key={item.id}>
                   {item.title}
                 </div>
               ))}
@@ -187,8 +192,8 @@ const Home = () => {
             <div className="blok">
               <h2>Languages</h2>
               <div className="lijst">
-                {languages.nodes.map((item, key) => (
-                  <div className="item" key={key}>
+                {languages.nodes.map((item) => (
+                  <div className="item" key={item.id}>
                     {item.title}
                     <small>{item.subtitle}</small>
                   </div>
@@ -198,8 +203,8 @@ const Home = () => {
 
             <div className="blok">
               <h2>Interests</h2>
-              {interests.nodes.map((item, key) => (
-                <div className="tag" key={key}>
+              {interests.nodes.map((item) => (
+                <div className="tag" key={item.id}>
                   {item.title}
                 </div>
               ))}
@@ -209,8 +214,8 @@ const Home = () => {
             <div className="blok" style={{ breakBefore: 'page' }}>
               <h2>Work</h2>
               <div className="experiences">
-                {work.nodes.map((item, key) => (
-                  <div key={key} style={{ breakInside: 'avoid' }}>
+                {work.nodes.map((item) => (
+                  <div key={item.id} style={{ breakInside: 'avoid' }}>
                     <div className="header">
                       <div>
                         {item.logo ? (
@@ -289,8 +294,8 @@ const Home = () => {
             <div className="blok" style={{ breakBefore: 'page' }}>
               <h2>Education</h2>
               <div className="experiences">
-                {education.nodes.map((item, key) => (
-                  <div key={key} style={{ breakInside: 'avoid' }}>
+                {education.nodes.map((item) => (
+                  <div key={item.id} style={{ breakInside: 'avoid' }}>
                     <div className="header">
                       <div>
                         {item.logo ? (
