@@ -8,7 +8,7 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
 
-import plural from '../plural';
+import { plural } from '../utils';
 
 dayjs.extend(duration);
 
