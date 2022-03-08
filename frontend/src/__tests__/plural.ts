@@ -1,4 +1,4 @@
-const { plural } = require('../utils');
+import { plural } from '../utils';
 
 test('Expect correct plural output with 2 months', () => {
   expect(plural(2, 'month')).toEqual('2 months');
