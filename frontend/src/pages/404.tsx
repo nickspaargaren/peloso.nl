@@ -1,5 +1,5 @@
-import * as React from 'react';
+import React, { ReactElement } from 'react';
 
-const NotFoundPage = () => <>404</>;
+const NotFoundPage = (): ReactElement => <>404</>;
 
 export default NotFoundPage;

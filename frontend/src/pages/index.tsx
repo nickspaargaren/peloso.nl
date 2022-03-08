@@ -5,7 +5,7 @@ import * as dayjs from 'dayjs';
 import * as duration from 'dayjs/plugin/duration';
 import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import * as React from 'react';
+import React, { ReactElement } from 'react';
 import { Helmet } from 'react-helmet';
 
 import { plural } from '../utils';
@@ -30,7 +30,7 @@ const difference = (datefrom, dateto) => {
   return `${plural(years, 'year')} ${plural(months, 'month')}`;
 };
 
-const Home = () => {
+const Home = (): ReactElement => {
   const {
     general, skills, languages, interests, work, education,
   } = useStaticQuery(
