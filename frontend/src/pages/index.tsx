@@ -1,34 +1,16 @@
 import '../index.css';
 
 import BlockContent from '@sanity/block-content-to-react';
-import dayjs, { Dayjs } from 'dayjs';
+import dayjs from 'dayjs';
 import * as duration from 'dayjs/plugin/duration';
 import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import React, { ReactElement } from 'react';
 import { Helmet } from 'react-helmet';
 
-import { plural } from '../utils';
+import { difference } from '../utils';
 
 dayjs.extend(duration);
-
-const difference = (datefrom: Dayjs, dateto: Dayjs): string => {
-  const totalDuration = dayjs.duration(dateto.diff(datefrom));
-
-  let { years, months } = Object.values(totalDuration)[0];
-  const { days } = Object.values(totalDuration)[0];
-
-  if (days > 0) {
-    months += 1;
-  }
-
-  if (months === 12) {
-    months = 0;
-    years += 1;
-  }
-
-  return `${plural(years, 'year')} ${plural(months, 'month')}`;
-};
 
 const Home = (): ReactElement => {
   const {
