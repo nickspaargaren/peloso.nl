@@ -216,6 +216,7 @@ const Home = (): ReactElement => {
                         <div>
                           {item.organization}
                           ,
+                          {' '}
                           {item.location}
                         </div>
                         <small>
