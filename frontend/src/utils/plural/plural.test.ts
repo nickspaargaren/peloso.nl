@@ -1,4 +1,4 @@
-import { plural } from '../utils';
+import { plural } from './plural';
 
 test('Expect correct plural output with 2 months', () => {
   expect(plural(2, 'month')).toEqual('2 months');
