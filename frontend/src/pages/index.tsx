@@ -12,7 +12,7 @@ import { plural } from '../utils';
 
 dayjs.extend(duration);
 
-const difference = (datefrom: Dayjs, dateto: Dayjs) => {
+const difference = (datefrom: Dayjs, dateto: Dayjs): string => {
   const totalDuration = dayjs.duration(dateto.diff(datefrom));
 
   let { years, months } = Object.values(totalDuration)[0];
