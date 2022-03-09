@@ -1,7 +1,7 @@
 import '../index.css';
 
 import BlockContent from '@sanity/block-content-to-react';
-import * as dayjs from 'dayjs';
+import dayjs, { Dayjs } from 'dayjs';
 import * as duration from 'dayjs/plugin/duration';
 import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
@@ -12,7 +12,7 @@ import { plural } from '../utils';
 
 dayjs.extend(duration);
 
-const difference = (datefrom, dateto) => {
+const difference = (datefrom: Dayjs, dateto: Dayjs) => {
   const totalDuration = dayjs.duration(dateto.diff(datefrom));
 
   let { years, months } = Object.values(totalDuration)[0];
