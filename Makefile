@@ -3,7 +3,8 @@ info:
 	@echo "  make start			Start the project containers."
 	@echo "  make stop			Stop the project containers."
 	@echo "  make dev			Start the project containers including dev output."
-	@echo "  make update			Update all dependencies in root, frontend and backend folders."
+	@echo "  make test			Run the project tests."
+	@echo "  make update		Update all dependencies in root, frontend and backend folders."
 	@echo "  make reset			Reset the project containers, volumes, local dependencies and cache files."
 
 build: \
@@ -23,6 +24,9 @@ stop:
 
 dev:
 	@docker-compose up
+
+test: start \
+	do-frontend-tests
 
 update: \
 	do-update-root-dependencies \
@@ -79,9 +83,14 @@ do-remove-nodemodules:
 	cd backend && sudo rm -rf node_modules
 	@echo ""
 	@echo "All node_modules folders removed.."
+
 do-remove-cache:
 	@echo ""
 	@echo "Removing frontend cache folder.."
 	cd frontend && sudo rm -rf .cache/ && sudo rm -rf public/
 	@echo ""
-	@echo "Cache folder removed.."
+	@echo "Cache folders removed.."
+
+do-frontend-tests:
+	@echo "Starting frontend tests.."
+	docker-compose exec frontend sh -c "yarn test"
