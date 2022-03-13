@@ -8,13 +8,25 @@ export const difference = (datefrom: Dayjs, dateto: Dayjs): string => {
   let { years, months } = Object.values(totalDuration)[0];
   const { days } = Object.values(totalDuration)[0];
 
-  if (days > 0) {
+  if (days > 1) {
     months += 1;
   }
 
   if (months === 12) {
     months = 0;
     years += 1;
+  }
+
+  if (!years && !months) {
+    return '';
+  }
+
+  if (!years && months) {
+    return plural(months, 'month');
+  }
+
+  if (years && !months) {
+    return plural(years, 'year');
   }
 
   return `${plural(years, 'year')} ${plural(months, 'month')}`;
