@@ -13,13 +13,13 @@ body {
   background-color: var(--main-color);
 }
 
-.houder {background: #fff; box-shadow: 40px 40px 0 0 rgba(0,0,0,.15); margin: 100px auto; max-width: 75%;}
-.houder .inhoud {display: grid; grid-template-columns: 400px 1fr;}
-.houder .inhoud .blok  {padding: 50px; border-bottom: 1px solid #eee;}
-.houder .inhoud .blok:last-child {border-bottom: 0;}
-.houder .inhoud aside {border-right: 1px solid #eee;}
+.holder {background: #fff; box-shadow: 40px 40px 0 0 rgba(0,0,0,.15); margin: 100px auto; max-width: 75%;}
+.holder .content {display: grid; grid-template-columns: 400px 1fr;}
+.holder .content .block  {padding: 50px; border-bottom: 1px solid #eee;}
+.holder .content .block:last-child {border-bottom: 0;}
+.holder .content aside {border-right: 1px solid #eee;}
 
-.houder .inhoud.header {background: #eee; color: #000;}
+.holder .content.header {background: #eee; color: #000;}
 
 h1, h2, h3 {color: #292a2c; margin: 0 0 20px;}
 
@@ -52,9 +52,6 @@ ul li:last-child {margin-bottom: 0px;}
 
 .tag {display: inline-block; padding: 5px; border: 2px solid #ddd; border-radius: 3px; margin: 0 5px 5px 0;}
 
-.lijst .item {margin-bottom: 20px;}
-.lijst .item:last-child {margin-bottom: 0;}
-
 .experiences {border-left: 3px solid #ddd; padding-left: 15px;}
 .experiences > div {margin-bottom: 20px;}
 .experiences > div .header {position: relative; display: grid; grid-gap: 10px; grid-template-columns: 36px 1fr ;}
@@ -65,19 +62,19 @@ ul li:last-child {margin-bottom: 0px;}
 .experiences > div:last-child {margin-bottom: 0;}
 
 @media screen and (max-width: 1100px) {
-  .houder {max-width: 100%; margin: 10px;}
-  .houder .inhoud {display: block;} 
-  .houder .inhoud .blok  {padding: 20px;}
-  .houder .inhoud aside .blok:last-child {border-bottom: 1px solid #eee;}
+  .holder {max-width: 100%; margin: 10px;}
+  .holder .content {display: block;} 
+  .holder .content .block  {padding: 20px;}
+  .holder .content aside .block:last-child {border-bottom: 1px solid #eee;}
 }
 
 @media print {
   body {background: #fff;font-size: 13px;}
   small {font-size: 11px;}
-  .houder {max-width: none; margin: 0; box-shadow: none;}
-  .houder .inhoud {display: block;}
-  .houder .inhoud.header {display: flex; background: #fff;}
-  .houder .inhoud.header > div:first-child {width: 400px;}
-  .houder .inhoud aside {border: 0;}
-  .houder .inhoud .blok {padding: 10px; border: 0;}
+  .holder {max-width: none; margin: 0; box-shadow: none;}
+  .holder .content {display: block;}
+  .holder .content.header {display: flex; background: #fff;}
+  .holder .content.header > div:first-child {width: 400px;}
+  .holder .content aside {border: 0;}
+  .holder .content .block {padding: 10px; border: 0;}
 }

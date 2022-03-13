@@ -109,8 +109,8 @@ const Home = (): ReactElement => {
         </title>
         <meta name="description" content="Curriculum Vitae" />
       </Helmet>
-      <div className="houder">
-        <div className="inhoud header">
+      <div className="holder">
+        <div className="content header">
           <div className="profileimage">
             <GatsbyImage
               image={general.image.asset.gatsbyImageData}
@@ -118,7 +118,7 @@ const Home = (): ReactElement => {
             />
           </div>
           <div
-            className="blok"
+            className="block"
             style={{ display: 'flex', flexDirection: 'column' }}
           >
             <h1>
@@ -132,9 +132,9 @@ const Home = (): ReactElement => {
           </div>
         </div>
 
-        <div className="inhoud">
+        <div className="content">
           <aside>
-            <div className="blok">
+            <div className="block">
               <h2>Contact</h2>
               <div className="general">
                 <div>
@@ -164,7 +164,7 @@ const Home = (): ReactElement => {
               </div>
             </div>
 
-            <div className="blok">
+            <div className="block">
               <h2>Skills</h2>
               {skills.nodes.map((item) => (
                 <div className="tag" key={item.id}>
@@ -173,9 +173,9 @@ const Home = (): ReactElement => {
               ))}
             </div>
 
-            <div className="blok">
+            <div className="block">
               <h2>Languages</h2>
-              <div className="lijst">
+              <div className="general">
                 {languages.nodes.map((item) => (
                   <div className="item" key={item.id}>
                     {item.title}
@@ -185,7 +185,7 @@ const Home = (): ReactElement => {
               </div>
             </div>
 
-            <div className="blok">
+            <div className="block">
               <h2>Interests</h2>
               {interests.nodes.map((item) => (
                 <div className="tag" key={item.id}>
@@ -195,7 +195,7 @@ const Home = (): ReactElement => {
             </div>
           </aside>
           <main>
-            <div className="blok" style={{ breakBefore: 'page' }}>
+            <div className="block" style={{ breakBefore: 'page' }}>
               <h2>Work</h2>
               <div className="experiences">
                 {work.nodes.map((item) => (
@@ -276,7 +276,7 @@ const Home = (): ReactElement => {
               </div>
             </div>
 
-            <div className="blok" style={{ breakBefore: 'page' }}>
+            <div className="block" style={{ breakBefore: 'page' }}>
               <h2>Education</h2>
               <div className="experiences">
                 {education.nodes.map((item) => (
