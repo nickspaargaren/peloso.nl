@@ -5,13 +5,22 @@ import { difference } from './difference';
 
 dayjs.extend(duration);
 
-test('Expect correct difference with less than 1 year', () => {
+test('Expect correct difference with 1 month', () => {
   expect(
     difference(
       dayjs('2022-01-01'),
       dayjs('2022-02-01'),
     ),
-  ).toEqual(' 2 months');
+  ).toEqual('1 month');
+});
+
+test('Expect correct difference with 1 month + 1 day', () => {
+  expect(
+    difference(
+      dayjs('2022-01-01'),
+      dayjs('2022-02-02'),
+    ),
+  ).toEqual('2 months');
 });
 
 test('Expect correct difference with 11 months', () => {
@@ -20,7 +29,7 @@ test('Expect correct difference with 11 months', () => {
       dayjs('2021-01-01'),
       dayjs('2021-12-01'),
     ),
-  ).toEqual('1 year ');
+  ).toEqual('1 year');
 });
 
 test('Expect correct difference with 12 months', () => {
@@ -29,16 +38,16 @@ test('Expect correct difference with 12 months', () => {
       dayjs('2018-01-01'),
       dayjs('2019-01-01'),
     ),
-  ).toEqual('1 year ');
+  ).toEqual('1 year');
 });
 
-test('Expect correct difference with 1 year 2 months', () => {
+test('Expect correct difference with 1 year 1 month', () => {
   expect(
     difference(
       dayjs('2018-01-01'),
       dayjs('2019-02-01'),
     ),
-  ).toEqual('1 year 2 months');
+  ).toEqual('1 year 1 month');
 });
 
 test('Expect correct difference (no output) without a difference', () => {
@@ -47,5 +56,5 @@ test('Expect correct difference (no output) without a difference', () => {
       dayjs('2022-01-01'),
       dayjs('2022-01-01'),
     ),
-  ).toEqual(' ');
+  ).toEqual('');
 });
