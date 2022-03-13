@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "description": "Peloso.nl",
-  "keywords": [
-    "gatsby"
-  ],
   "scripts": {
     "develop": "gatsby develop -H 0.0.0.0",
     "start": "gatsby develop",
