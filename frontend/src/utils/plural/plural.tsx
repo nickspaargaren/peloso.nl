@@ -1,4 +1,4 @@
-export const plural = (amount: number, text: string): string => {
+export const plural = (amount: number, text: 'month' | 'year'): string => {
   if (amount === 0) {
     return '';
   }
