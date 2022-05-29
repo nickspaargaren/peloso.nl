@@ -3,10 +3,10 @@ import dayjs, { Dayjs } from 'dayjs';
 import { plural } from '..';
 
 export const difference = (datefrom: Dayjs, dateto: Dayjs): string => {
-  const totalDuration = dayjs.duration(dateto.diff(datefrom));
+  const [ date ] = Object.values(dayjs.duration(dateto.diff(datefrom)));
 
-  let { years, months } = Object.values(totalDuration)[0];
-  const { days } = Object.values(totalDuration)[0];
+  let { years, months } = date;
+  const { days } = date;
 
   if (days > 1) {
     months += 1;
