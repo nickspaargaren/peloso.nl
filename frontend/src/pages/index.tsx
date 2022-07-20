@@ -6,7 +6,6 @@ import * as duration from 'dayjs/plugin/duration';
 import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import React, { ReactElement } from 'react';
-import { Helmet } from 'react-helmet';
 
 import { difference } from '../utils';
 
@@ -99,16 +98,6 @@ const Home = (): ReactElement => {
 
   return (
     <>
-      <Helmet>
-        <html lang="en" />
-        <meta charSet="utf-8" />
-        <title>
-          {general.name}
-          {' '}
-          {general.lastname}
-        </title>
-        <meta name="description" content="Curriculum Vitae" />
-      </Helmet>
       <div className="holder">
         <div className="content header">
           <div className="profileimage">
@@ -361,3 +350,12 @@ const Home = (): ReactElement => {
 };
 
 export default Home;
+
+export function Head() {
+  return (
+    <>
+      <title>Danielle Peloso</title>
+      <meta name="description" content="Curriculum Vitae" />
+    </>
+  );
+}
