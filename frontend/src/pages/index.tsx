@@ -42,7 +42,9 @@ const Home = (): ReactElement => {
             }
           }
 
-          languages: allSanityLanguages(sort: { fields: order, order: ASC }) {
+          languages: allSanityLanguages(
+            sort: { order: ASC }
+          ) {
             nodes {
               id
               title
@@ -57,7 +59,9 @@ const Home = (): ReactElement => {
             }
           }
 
-          work: allSanityWork(sort: { fields: datefrom, order: DESC }) {
+          work: allSanityWork(
+            sort: { datefrom: DESC }
+          ) {
             nodes {
               id
               title
@@ -75,7 +79,7 @@ const Home = (): ReactElement => {
           }
 
           education: allSanityEducation(
-            sort: { fields: datefrom, order: DESC }
+            sort: { datefrom: DESC }
           ) {
             nodes {
               id
