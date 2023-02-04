@@ -1,9 +1,11 @@
 // sanity.config.js
-import {defineConfig} from 'sanity'
-import {deskTool} from 'sanity/desk'
-import schemas from './schemas/schema'
-import deskStructure from './deskStructure'
-import { visionTool } from '@sanity/vision'
+import { orderableDocumentListDeskItem } from '@sanity/orderable-document-list';
+import { visionTool } from '@sanity/vision';
+import { AiOutlineComment, AiOutlineContacts } from 'react-icons/ai';
+import { defineConfig } from 'sanity';
+import { deskTool } from 'sanity/desk';
+
+import schemas from './schemas/schema';
 
 export default defineConfig({
   name: 'pelosonl',
@@ -12,11 +14,33 @@ export default defineConfig({
   dataset: 'production',
   plugins: [
     deskTool({
-      structure: deskStructure
+      structure: (S, context) => S.list()
+        .title('Content')
+        .items([
+          orderableDocumentListDeskItem({
+            name: 'languages',
+            title: 'Languages',
+            type: 'languages',
+            icon: AiOutlineComment,
+            S,
+            context,
+          }),
+          S.listItem()
+            .title('General')
+            .icon(AiOutlineContacts)
+            .child(
+              S.document()
+                .schemaType('general')
+                .documentId('general'),
+            ),
+          ...S.documentTypeListItems().filter(
+            (listItem) => ![ 'general' ].includes(listItem.getId()) && ![ 'languages' ].includes(listItem.getId()),
+          ),
+        ]),
     }),
-    visionTool()
+    visionTool(),
   ],
   schema: {
     types: schemas,
   },
-})
+});

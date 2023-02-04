@@ -1,10 +1,7 @@
-import { AiOutlineComment } from 'react-icons/ai';
-
 export default {
   name: 'languages',
   title: 'Languages',
   type: 'document',
-  icon: AiOutlineComment,
   fields: [
     {
       name: 'title',
@@ -17,19 +14,10 @@ export default {
       type: 'string',
     },
     {
-      name: 'order',
+      name: 'orderRank',
       title: 'Order',
-      type: 'number',
+      type: 'string',
       hidden: true,
-    },
-  ],
-  orderings: [
-    {
-      title: 'Handmatig',
-      name: 'Handmatig',
-      by: [
-        { field: 'order', direction: 'asc' },
-      ],
-    },
-  ],
+    }
+  ]
 };
