@@ -43,7 +43,7 @@ const Home = (): ReactElement => {
           }
 
           languages: allSanityLanguages(
-            sort: { order: ASC }
+            sort: { orderRank: ASC }
           ) {
             nodes {
               id
