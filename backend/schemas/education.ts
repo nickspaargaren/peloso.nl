@@ -1,4 +1,4 @@
-import { AiOutlineBook } from 'react-icons/ai'
+import { AiOutlineBook } from 'react-icons/ai';
 
 export default {
   name: 'education',
@@ -21,8 +21,8 @@ export default {
       title: 'Institution logo',
       type: 'image',
       options: {
-        hotspot: true
-      }
+        hotspot: true,
+      },
     },
     {
       name: 'location',
@@ -30,10 +30,10 @@ export default {
       type: 'string',
     },
     {
-      title: 'Description', 
+      title: 'Description',
       name: 'description',
-      type: 'array', 
-      of: [{type: 'block'}]
+      type: 'array',
+      of: [ { type: 'block' } ],
     },
     {
       name: 'datefrom',
@@ -41,7 +41,7 @@ export default {
       type: 'date',
       options: {
         dateFormat: 'MM-YYYY',
-      }
+      },
     },
     {
       name: 'dateto',
@@ -49,7 +49,7 @@ export default {
       type: 'date',
       options: {
         dateFormat: 'MM-YYYY',
-      }
+      },
     },
-  ]
-}
+  ],
+};

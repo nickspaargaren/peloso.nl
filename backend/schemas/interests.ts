@@ -1,4 +1,4 @@
-import { AiOutlineTrophy } from 'react-icons/ai'
+import { AiOutlineTrophy } from 'react-icons/ai';
 
 export default {
   name: 'interests',
@@ -11,5 +11,5 @@ export default {
       title: 'Title',
       type: 'string',
     },
-  ]
-}
+  ],
+};
