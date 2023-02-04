@@ -24,8 +24,7 @@ test: ## Run the project tests.
 	@make start
 	@make do-frontend-tests
 
-update: ## Update all dependencies in root, frontend and backend folders.
-	@make do-update-root-dependencies
+update: ## Update all dependencies in frontend and backend folders.
 	@make do-update-frontend-dependencies
 	@make do-update-backend-dependencies
 
@@ -36,14 +35,8 @@ reset: ## Reset the project containers, volumes, local dependencies and cache fi
 
 # Installing dependencies
 do-install-dependencies:
-	@make do-install-root-dependencies
 	@make do-install-frontend-dependencies
 	@make do-install-backend-dependencies
-
-do-install-root-dependencies:
-	@echo ""
-	@echo "Installing local dependencies.."
-	@yarn install
 
 do-install-frontend-dependencies:
 	@echo ""
@@ -56,11 +49,6 @@ do-install-backend-dependencies:
 	@cd backend && yarn install
 
 # Upgrade dependencies
-do-update-root-dependencies:
-	@echo ""
-	@echo "Updating dependencies.."
-	@yarn upgrade-interactive --latest
-
 do-update-frontend-dependencies:
 	@echo ""
 	@echo "Updating dependencies for frontend.."
@@ -75,7 +63,6 @@ do-update-backend-dependencies:
 do-remove-nodemodules:
 	@echo ""
 	@echo "Removing all node_modules folders.."
-	@sudo rm -rf node_modules
 	@cd frontend && sudo rm -rf node_modules
 	@cd backend && sudo rm -rf node_modules
 	@echo ""
