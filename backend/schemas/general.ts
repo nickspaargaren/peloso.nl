@@ -2,10 +2,10 @@ export default {
   name: 'general',
   title: 'General',
   __experimental_actions: [
-    /*'create',*/
+    /* 'create', */
     'update',
-    /*'delete',*/
-    'publish'
+    /* 'delete', */
+    'publish',
   ],
   type: 'document',
   fields: [
@@ -20,10 +20,10 @@ export default {
       type: 'string',
     },
     {
-      title: 'Description', 
+      title: 'Description',
       name: 'description',
-      type: 'array', 
-      of: [{type: 'block'}]
+      type: 'array',
+      of: [ { type: 'block' } ],
     },
     {
       name: 'birthdate',
@@ -50,18 +50,18 @@ export default {
       title: 'Profile image',
       type: 'image',
       options: {
-        hotspot: true
-      }
+        hotspot: true,
+      },
     },
     {
       name: 'phone',
       title: 'Phone number',
-      type: 'string'
+      type: 'string',
     },
     {
       name: 'email',
       title: 'Email address',
-      type: 'string'
+      type: 'string',
     },
-  ]
-}
+  ],
+};

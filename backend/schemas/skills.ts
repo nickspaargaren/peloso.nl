@@ -1,4 +1,4 @@
-import { AiOutlineFormatPainter } from 'react-icons/ai'
+import { AiOutlineFormatPainter } from 'react-icons/ai';
 
 export default {
   name: 'skills',
@@ -11,5 +11,5 @@ export default {
       title: 'Title',
       type: 'string',
     },
-  ]
-}
+  ],
+};
