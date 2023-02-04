@@ -6,7 +6,7 @@ import deskStructure from './deskStructure'
 import { visionTool } from '@sanity/vision'
 
 export default defineConfig({
-  name: 'Peloso.nl',
+  name: 'pelosonl',
   title: 'Danielle Peloso',
   projectId: 'ozsvr5j0',
   dataset: 'production',
