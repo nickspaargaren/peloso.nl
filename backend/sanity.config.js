@@ -1,7 +1,8 @@
 // sanity.config.js
 import {defineConfig} from 'sanity'
 import {deskTool} from 'sanity/desk'
-import {schemaTypes} from './schemas/schema'
+import schemas from './schemas/schema'
+import deskStructure from './deskStructure'
 
 export default defineConfig({
   name: 'Peloso.nl',
@@ -9,9 +10,11 @@ export default defineConfig({
   projectId: 'ozsvr5j0',
   dataset: 'production',
   plugins: [
-    deskTool(),
+    deskTool({
+      structure: deskStructure
+    })
   ],
   schema: {
-    types: schemaTypes,
+    types: schemas,
   },
 })

@@ -1,7 +1,6 @@
-import S from '@sanity/desk-tool/structure-builder'
 import { AiOutlineContacts } from 'react-icons/ai'
 
-export default () =>
+export default (S) =>
   S.list()
     .title('Content')
     .items([
