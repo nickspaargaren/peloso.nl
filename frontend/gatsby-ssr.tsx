@@ -7,7 +7,7 @@ export const onRenderBody: GatsbySSR['onRenderBody'] = (
   setHtmlAttributes({ lang: 'en' });
   setPostBodyComponents(
     [
-      <script key="stats" defer data-domain="peloso.nl" src="https://plausible.io/js/script.js" />,
+      <script key="stats" defer src="/stats/js/script.js" data-api="/stats/api/event" data-domain="peloso.nl" />,
     ],
   );
 };
