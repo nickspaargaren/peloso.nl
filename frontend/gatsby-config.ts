@@ -4,6 +4,7 @@ const config: GatsbyConfig = {
   siteMetadata: {
     title: 'peloso.nl',
   },
+  trailingSlash: 'never',
   plugins: [
     {
       resolve: 'gatsby-source-sanity',
