@@ -1,6 +1,6 @@
 import '../index.css';
 
-import BlockContent from '@sanity/block-content-to-react';
+import { PortableText } from '@portabletext/react';
 import dayjs from 'dayjs';
 import * as duration from 'dayjs/plugin/duration';
 import { graphql, useStaticQuery } from 'gatsby';
@@ -119,7 +119,7 @@ const Home = (): ReactElement => {
             {general.lastname}
           </h1>
           {general._rawDescription && (
-          <BlockContent blocks={general._rawDescription} />
+          <PortableText value={general._rawDescription} />
           )}
         </div>
       </div>
@@ -259,7 +259,7 @@ const Home = (): ReactElement => {
                         </i>
                       </small>
                       {item._rawDescription && (
-                        <BlockContent blocks={item._rawDescription} />
+                        <PortableText value={item._rawDescription} />
                       )}
                     </div>
                   </div>
@@ -337,7 +337,7 @@ const Home = (): ReactElement => {
                         </i>
                       </small>
                       {item._rawDescription && (
-                      <BlockContent blocks={item._rawDescription} />
+                      <PortableText value={item._rawDescription} />
                       )}
                     </div>
                   </div>
