@@ -1,3 +1,5 @@
+import { expect, test } from 'vitest';
+
 import { plural } from './plural';
 
 test('Expect correct plural output with 2 months', () => {
