@@ -86,3 +86,7 @@ do-frontend-tests:
 do-frontend-lint:
 	@echo "Starting frontend linter.."
 	@docker-compose exec frontend sh -c "yarn lint"
+
+do-frontend-typescript-check:
+	@echo "Starting frontend typescript check.."
+	@docker-compose exec frontend sh -c "yarn tsc --noEmit"
