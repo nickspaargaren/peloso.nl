@@ -2,7 +2,7 @@ import '../index.css';
 
 import { PortableText } from '@portabletext/react';
 import dayjs from 'dayjs';
-import * as duration from 'dayjs/plugin/duration';
+import duration from 'dayjs/plugin/duration';
 import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import React, { ReactElement } from 'react';
