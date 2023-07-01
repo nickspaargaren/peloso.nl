@@ -2,7 +2,6 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    jest: true,
   },
   extends: [
     'plugin:react/recommended',
@@ -20,7 +19,6 @@ module.exports = {
     'react',
     '@typescript-eslint',
     'simple-import-sort',
-    'jest',
   ],
   rules: {
     'react/jsx-filename-extension': [ 1, { extensions: [ '.tsx', '.ts' ] } ],
