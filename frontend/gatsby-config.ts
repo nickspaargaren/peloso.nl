@@ -1,6 +1,9 @@
 import type { GatsbyConfig } from 'gatsby';
 
 const config: GatsbyConfig = {
+  graphqlTypegen: {
+    generateOnBuild: true,
+  },
   siteMetadata: {
     title: 'peloso.nl',
   },
