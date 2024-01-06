@@ -1,6 +1,6 @@
 import '../index.css';
 
-import { PortableText } from '@portabletext/react';
+import { PortableText, PortableTextProps } from '@portabletext/react';
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import { graphql, useStaticQuery } from 'gatsby';
@@ -14,9 +14,10 @@ dayjs.extend(duration);
 const Home = (): ReactElement => {
   const {
     general, skills, languages, interests, work, education,
-  } = useStaticQuery(
+    // eslint-disable-next-line no-undef
+  } = useStaticQuery<Queries.generalQuery>(
     graphql`
-        query {
+        query general {
           general: sanityGeneral {
             name
             lastname
@@ -104,22 +105,24 @@ const Home = (): ReactElement => {
     <div className="holder">
       <div className="content header">
         <div className="profileimage">
-          <GatsbyImage
-            image={general.image.asset.gatsbyImageData}
-            alt={`${general.name} ${general.lastname}`}
-          />
+          {general?.image?.asset && (
+            <GatsbyImage
+              image={general.image.asset.gatsbyImageData}
+              alt={`${general?.name} ${general?.lastname}`}
+            />
+          )}
         </div>
         <div
           className="block"
           style={{ display: 'flex', flexDirection: 'column' }}
         >
           <h1>
-            {general.name}
+            {general?.name}
             {' '}
-            {general.lastname}
+            {general?.lastname}
           </h1>
-          {general._rawDescription && (
-          <PortableText value={general._rawDescription} />
+          {general?._rawDescription && (
+          <PortableText value={general?._rawDescription as PortableTextProps['value']} />
           )}
         </div>
       </div>
@@ -131,27 +134,27 @@ const Home = (): ReactElement => {
             <div className="general">
               <div>
                 <small>Nationality</small>
-                {general.nationality}
+                {general?.nationality}
               </div>
               <div>
                 <small>Residence</small>
-                {general.residence}
+                {general?.residence}
               </div>
               <div>
                 <small>Place of birth</small>
-                {general.birthplace}
+                {general?.birthplace}
               </div>
               <div>
                 <small>Date of birth</small>
-                {general.birthdate}
+                {general?.birthdate}
               </div>
               <div>
                 <small>Phone number</small>
-                {general.phone}
+                {general?.phone}
               </div>
               <div>
                 <small>Email</small>
-                <a href={`mailto:${general.email}`}>{general.email}</a>
+                <a href={`mailto:${general?.email}`}>{general?.email}</a>
               </div>
             </div>
           </div>
@@ -194,7 +197,7 @@ const Home = (): ReactElement => {
                 <div key={item.id} style={{ breakInside: 'avoid' }}>
                   <div className="header">
                     <div>
-                      {item.logo ? (
+                      {item.logo?.asset ? (
                         <GatsbyImage
                           image={item.logo.asset.gatsbyImageData}
                           alt={`${item.organization} logo`}
@@ -259,7 +262,7 @@ const Home = (): ReactElement => {
                         </i>
                       </small>
                       {item._rawDescription && (
-                        <PortableText value={item._rawDescription} />
+                        <PortableText value={item._rawDescription as PortableTextProps['value']} />
                       )}
                     </div>
                   </div>
@@ -275,7 +278,7 @@ const Home = (): ReactElement => {
                 <div key={item.id} style={{ breakInside: 'avoid' }}>
                   <div className="header">
                     <div>
-                      {item.logo ? (
+                      {item.logo?.asset ? (
                         <GatsbyImage
                           image={item.logo.asset.gatsbyImageData}
                           alt={`${item.institution} logo`}
@@ -337,7 +340,7 @@ const Home = (): ReactElement => {
                         </i>
                       </small>
                       {item._rawDescription && (
-                      <PortableText value={item._rawDescription} />
+                      <PortableText value={item._rawDescription as PortableTextProps['value']} />
                       )}
                     </div>
                   </div>
