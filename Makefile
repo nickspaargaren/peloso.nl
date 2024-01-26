@@ -2,23 +2,30 @@ info:
 	@echo "\n=== Available commands ===\n"
 	@egrep '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) |  awk 'BEGIN {FS = ":.*?## "}; {printf "\033[33m%-15s\033[0m %s\n", $$1, $$2}'
 
+## Snippets
+set-ids = USERID=$$(id -u) GROUPID=$$(id -g)
+docker-compose-exec = docker compose exec -u $$(id -u):$$(id -g)
+docker-compose-run = docker compose run --interactive=false --rm -u $$(id -u):$$(id -g)
+
 build: ## Build the project images.
-	@make do-install-dependencies
+	@docker compose build
 	@echo ""
-	@docker-compose build
+	@make start
+	@make do-install-dependencies
+	@make start
 
 start: ## Start the project containers.
-	@docker-compose up -d
+	@${set-ids} docker compose up -d
 	@echo ""
 	@echo "  The frontend is running on http://localhost:3000/."
 	@echo "  The backend  is running on http://localhost:3333/."
 	@echo ""
 
 stop: ## Stop the project containers.
-	@docker-compose stop
+	@docker compose stop
 
 dev: ## Start the project containers including dev output.
-	@docker-compose up
+	@docker compose up
 
 test: ## Run the project tests.
 	@make start
@@ -32,10 +39,8 @@ update: ## Update all dependencies in frontend and backend folders.
 	@make do-update-frontend-dependencies
 	@make do-update-backend-dependencies
 
-reset: ## Reset the project containers, volumes, local dependencies and cache files.
-	@make do-remove-nodemodules
-	@make do-remove-cache
-	@docker-compose down -v
+down: ## Reset the project containers, volumes and networks.
+	@docker compose down --volumes
 
 # Installing dependencies
 do-install-dependencies:
@@ -45,12 +50,12 @@ do-install-dependencies:
 do-install-frontend-dependencies:
 	@echo ""
 	@echo "Installing local dependencies for frontend.."
-	@cd frontend && yarn install
+	@${docker-compose-run} frontend yarn install
 
 do-install-backend-dependencies:
 	@echo ""
 	@echo "Installing local dependencies for backend.."
-	@cd backend && yarn install
+	@${docker-compose-run} backend yarn install
 
 # Upgrade dependencies
 do-update-frontend-dependencies:
@@ -63,30 +68,14 @@ do-update-backend-dependencies:
 	@echo "Updating dependencies for backend.."
 	@cd backend && yarn upgrade-interactive --latest
 
-# Remove dependencies & cache
-do-remove-nodemodules:
-	@echo ""
-	@echo "Removing all node_modules folders.."
-	@cd frontend && sudo rm -rf node_modules
-	@cd backend && sudo rm -rf node_modules
-	@echo ""
-	@echo "All node_modules folders removed.."
-
-do-remove-cache:
-	@echo ""
-	@echo "Removing frontend cache folder.."
-	@cd frontend && sudo rm -rf .cache/ && sudo rm -rf public/
-	@echo ""
-	@echo "Cache folders removed.."
-
 do-frontend-tests:
 	@echo "Starting frontend tests.."
-	@docker-compose exec frontend sh -c "yarn test"
+	@${docker-compose-exec} frontend yarn test
 
 do-frontend-lint:
 	@echo "Starting frontend linter.."
-	@docker-compose exec frontend sh -c "yarn lint"
+	@${docker-compose-exec} frontend yarn lint
 
 do-frontend-typescript-check:
 	@echo "Starting frontend typescript check.."
-	@docker-compose exec frontend sh -c "yarn tsc --noEmit"
+	@${docker-compose-exec} frontend yarn tsc --noEmit
