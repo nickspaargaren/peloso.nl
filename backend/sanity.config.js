@@ -1,9 +1,8 @@
-// sanity.config.js
 import { orderableDocumentListDeskItem } from '@sanity/orderable-document-list';
 import { visionTool } from '@sanity/vision';
 import { AiOutlineComment, AiOutlineContacts } from 'react-icons/ai';
 import { defineConfig } from 'sanity';
-import { deskTool } from 'sanity/desk';
+import { structureTool } from 'sanity/structure';
 
 import schemas from './schemas/schema';
 
@@ -13,7 +12,7 @@ export default defineConfig({
   projectId: 'ozsvr5j0',
   dataset: 'production',
   plugins: [
-    deskTool({
+    structureTool({
       structure: (S, context) => S.list()
         .title('Content')
         .items([
