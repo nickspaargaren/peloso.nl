@@ -14,7 +14,7 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "@portabletext/react": "^3.0.4",
+    "@portabletext/react": "^3.1.0",
     "dayjs": "^1.11.9",
     "gatsby": "^5.11.0",
     "gatsby-image": "^3.11.0",
