@@ -2041,25 +2041,25 @@
     "@pnpm/network.ca-file" "^1.0.1"
     config-chain "^1.1.11"
 
-"@portabletext/react@^3.0.4":
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/@portabletext/react/-/react-3.0.4.tgz#cd1316c782b227fad206fd3147e1c9d60aa933a8"
-  integrity sha512-M15IXRgoOgWiu3WxwdCZPpi/0sdP2KrMcRKCZFHI4D2nkhXO1A8Avs6Djc+uPg5ayfnCxewLl/FnXA0hFgccBw==
+"@portabletext/react@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@portabletext/react/-/react-3.1.0.tgz#95d08b67e74d380705726db6762321bf926796a6"
+  integrity sha512-ZGHlvS+NvId9RSqnflN8xF2KVZgAgD399dK1GaycurnGNZGZYTd5nZmc8by1yL76Ar8n/dbVtouUDJIkO4Tupw==
   dependencies:
-    "@portabletext/toolkit" "^2.0.4"
-    "@portabletext/types" "^2.0.5"
+    "@portabletext/toolkit" "^2.0.15"
+    "@portabletext/types" "^2.0.13"
 
-"@portabletext/toolkit@^2.0.4":
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/@portabletext/toolkit/-/toolkit-2.0.4.tgz#5e5d4461f3451736c3165962b4a39d0693c9834b"
-  integrity sha512-ZE+WntiZQ40vxMBu3/QXRbGjzL8/R2BOFgdf6danJOahvlL9lZ1/DDShyUsxNaAvoBarwGJtjuZVOcRJWcsVng==
+"@portabletext/toolkit@^2.0.15":
+  version "2.0.15"
+  resolved "https://registry.yarnpkg.com/@portabletext/toolkit/-/toolkit-2.0.15.tgz#f13764efeebfcc92bcb792b1c3724fa0456703fe"
+  integrity sha512-KRNEUAd6eOxE9y591qC0sE24ZG2q27OHXe0dsPclj4IoEzf8aEuDcHR64wfFtB0aHq9Wdx3pIinmhZZcl35/vg==
   dependencies:
-    "@portabletext/types" "^2.0.5"
+    "@portabletext/types" "^2.0.13"
 
-"@portabletext/types@^2.0.5":
-  version "2.0.5"
-  resolved "https://registry.yarnpkg.com/@portabletext/types/-/types-2.0.5.tgz#89872bd5b25df8c1d917e13fe3f035cdf135ae0e"
-  integrity sha512-AceKp/Y6UIzvUe/T675oPKlO2Dnt1BVIiUpwhcplPzLeYqaYaWYvb7ricVyWj7j0rukYRgBRQdrTBvgo9E1D+g==
+"@portabletext/types@^2.0.13":
+  version "2.0.13"
+  resolved "https://registry.yarnpkg.com/@portabletext/types/-/types-2.0.13.tgz#7a4bf6dac30713fbe1b4bc01dc572af0af72955d"
+  integrity sha512-5xk5MSyQU9CrDho3Rsguj38jhijhD36Mk8S6mZo3huv6PM+t4M/5kJN2KFIxgvt4ONpvOEs1pVIZAV0cL0Vi+Q==
 
 "@rollup/rollup-android-arm-eabi@4.9.4":
   version "4.9.4"
