@@ -1,11 +1,8 @@
 {
-  "name": "peloso.nl",
+  "name": "frontend",
   "version": "1.0.0",
-  "private": true,
-  "description": "Peloso.nl",
   "scripts": {
-    "develop": "gatsby develop -H 0.0.0.0",
-    "start": "gatsby develop",
+    "dev": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "lint": "eslint '**/*.{ts,tsx}'",
