@@ -6,7 +6,7 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "lint": "eslint '**/*.{ts,tsx}'",
-    "tsc": "tsc --noEmit",
+    "check-types": "tsc --noEmit",
     "test": "vitest run",
     "clean": "gatsby clean"
   },

@@ -1,11 +1,8 @@
 name: CI
 on: push
 jobs:
-  lint:
+  checks:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./frontend
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -14,11 +11,11 @@ jobs:
       - name: Install modules
         run: yarn install
       - name: Run ESLint
-        run: yarn run lint
+        run: yarn lint
       - name: Build project & generate types
         run: yarn build
       - name: Run TypeScript Check
-        run: yarn run tsc
+        run: yarn check-types
 
   tests:
     runs-on: ubuntu-latest
@@ -34,18 +31,3 @@ jobs:
         run: yarn install
       - name: Run tests
         run: yarn run test
-
-  sanity-build:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./backend
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 20
-      - name: Install modules
-        run: yarn install
-      - name: Build Sanity Studio
-        run: yarn build

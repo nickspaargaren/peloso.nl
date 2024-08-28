@@ -4,7 +4,8 @@
   "scripts": {
     "start": "sanity start",
     "build": "sanity build",
-    "dev": "sanity dev"
+    "dev": "sanity dev",
+    "check-types": "tsc --noEmit"
   },
   "dependencies": {
     "@sanity/cli": "^3.56.0",
