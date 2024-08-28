@@ -16,18 +16,5 @@ jobs:
         run: yarn build
       - name: Run TypeScript Check
         run: yarn check-types
-
-  tests:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./frontend
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 20
-      - name: Install modules
-        run: yarn install
       - name: Run tests
-        run: yarn run test
+        run: yarn test
