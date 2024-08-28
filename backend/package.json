@@ -12,7 +12,7 @@
     "dev": "sanity dev --host=0.0.0.0"
   },
   "dependencies": {
-    "@sanity/cli": "^3.52.4",
+    "@sanity/cli": "^3.56.0",
     "@sanity/components": "^2.14.0",
     "@sanity/orderable-document-list": "^1.2.1",
     "@sanity/vision": "^3.55.0",
