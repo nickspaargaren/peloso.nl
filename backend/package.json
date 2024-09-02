@@ -5,6 +5,7 @@
     "start": "sanity start",
     "build": "sanity build",
     "dev": "sanity dev",
+    "lint": "eslint '**/*.ts'",
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
