@@ -18,6 +18,6 @@ export default {
       title: 'Order',
       type: 'string',
       hidden: true,
-    }
-  ]
+    },
+  ],
 };

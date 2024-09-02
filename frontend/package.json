@@ -1,21 +1,18 @@
 {
-  "name": "peloso.nl",
+  "name": "frontend",
   "version": "1.0.0",
-  "private": true,
-  "description": "Peloso.nl",
   "scripts": {
-    "develop": "gatsby develop -H 0.0.0.0",
-    "start": "gatsby develop",
+    "dev": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "lint": "eslint '**/*.{ts,tsx}'",
-    "tsc": "tsc --noEmit",
+    "check-types": "tsc --noEmit",
     "test": "vitest run",
     "clean": "gatsby clean"
   },
   "dependencies": {
     "@portabletext/react": "^3.1.0",
-    "dayjs": "^1.11.9",
+    "dayjs": "^1.11.13",
     "gatsby": "^5.11.0",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-image": "^3.11.0",
