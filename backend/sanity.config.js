@@ -1,5 +1,4 @@
 import { orderableDocumentListDeskItem } from '@sanity/orderable-document-list';
-import { visionTool } from '@sanity/vision';
 import { AiOutlineComment, AiOutlineContacts } from 'react-icons/ai';
 import { defineConfig } from 'sanity';
 import { structureTool } from 'sanity/structure';
@@ -37,7 +36,6 @@ export default defineConfig({
           ),
         ]),
     }),
-    visionTool(),
   ],
   schema: {
     types: schemas,
