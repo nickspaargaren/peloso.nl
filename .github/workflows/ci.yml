@@ -4,17 +4,32 @@ jobs:
   checks:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+
+      - name: Cache turbo build setup
+        uses: actions/cache@v4
+        with: 
+          path: .turbo
+          key: ${{ runner.os }}-turbo-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-turbo-
+
+      - uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: 'yarn'
+
       - name: Install modules
         run: yarn install
+
       - name: Run ESLint
         run: yarn lint
+
       - name: Build project & generate types
         run: yarn build
+
       - name: Run TypeScript Check
         run: yarn check-types
+
       - name: Run tests
         run: yarn test
