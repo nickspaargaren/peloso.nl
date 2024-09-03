@@ -16,7 +16,6 @@ export default defineConfig({
         .title('Content')
         .items([
           orderableDocumentListDeskItem({
-            name: 'languages',
             title: 'Languages',
             type: 'languages',
             icon: AiOutlineComment,
@@ -32,7 +31,11 @@ export default defineConfig({
                 .documentId('general'),
             ),
           ...S.documentTypeListItems().filter(
-            (listItem) => ![ 'general' ].includes(listItem.getId()) && ![ 'languages' ].includes(listItem.getId()),
+            (listItem) => {
+              const id = listItem.getId();
+              if (!id) return 
+              return ![ 'general' ].includes(id) && ![ 'languages' ].includes(id)
+            },
           ),
         ]),
     }),
