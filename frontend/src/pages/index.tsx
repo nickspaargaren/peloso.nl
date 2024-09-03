@@ -1,105 +1,95 @@
-import '../index.css';
+import "../index.css";
 
-import { PortableText, PortableTextProps } from '@portabletext/react';
-import dayjs from 'dayjs';
-import duration from 'dayjs/plugin/duration';
-import { graphql, useStaticQuery } from 'gatsby';
-import { GatsbyImage } from 'gatsby-plugin-image';
-import React, { ReactElement } from 'react';
+import { PortableText, PortableTextProps } from "@portabletext/react";
+import dayjs from "dayjs";
+import duration from "dayjs/plugin/duration";
+import { graphql, useStaticQuery } from "gatsby";
+import { GatsbyImage } from "gatsby-plugin-image";
+import React, { ReactElement } from "react";
 
-import { difference } from '../utils';
+import { difference } from "../utils";
 
 dayjs.extend(duration);
 
 const Home = (): ReactElement => {
-  const {
-    general, skills, languages, interests, work, education,
-    // eslint-disable-next-line no-undef
-  } = useStaticQuery<Queries.generalQuery>(
-    graphql`
-        query general {
-          general: sanityGeneral {
-            name
-            lastname
-            _rawDescription
-            nationality
-            residence
-            birthplace
-            birthdate(formatString: "D MMMM YYYY")
-            age: birthdate(fromNow: true)
-            image {
+  const { general, skills, languages, interests, work, education } =
+    useStaticQuery<Queries.generalQuery>(graphql`
+      query general {
+        general: sanityGeneral {
+          name
+          lastname
+          _rawDescription
+          nationality
+          residence
+          birthplace
+          birthdate(formatString: "D MMMM YYYY")
+          age: birthdate(fromNow: true)
+          image {
+            asset {
+              gatsbyImageData
+            }
+          }
+          phone
+          email
+        }
+
+        skills: allSanitySkills {
+          nodes {
+            id
+            title
+          }
+        }
+
+        languages: allSanityLanguages(sort: { orderRank: ASC }) {
+          nodes {
+            id
+            title
+            subtitle
+          }
+        }
+
+        interests: allSanityInterests {
+          nodes {
+            id
+            title
+          }
+        }
+
+        work: allSanityWork(sort: { datefrom: DESC }) {
+          nodes {
+            id
+            title
+            organization
+            logo {
               asset {
                 gatsbyImageData
               }
             }
-            phone
-            email
-          }
-
-          skills: allSanitySkills {
-            nodes {
-              id
-              title
-            }
-          }
-
-          languages: allSanityLanguages(
-            sort: { orderRank: ASC }
-          ) {
-            nodes {
-              id
-              title
-              subtitle
-            }
-          }
-
-          interests: allSanityInterests {
-            nodes {
-              id
-              title
-            }
-          }
-
-          work: allSanityWork(
-            sort: { datefrom: DESC }
-          ) {
-            nodes {
-              id
-              title
-              organization
-              logo {
-                asset {
-                  gatsbyImageData
-                }
-              }
-              location
-              _rawDescription
-              datefrom
-              dateto
-            }
-          }
-
-          education: allSanityEducation(
-            sort: { datefrom: DESC }
-          ) {
-            nodes {
-              id
-              title
-              institution
-              logo {
-                asset {
-                  gatsbyImageData
-                }
-              }
-              location
-              _rawDescription
-              datefrom
-              dateto
-            }
+            location
+            _rawDescription
+            datefrom
+            dateto
           }
         }
-      `,
-  );
+
+        education: allSanityEducation(sort: { datefrom: DESC }) {
+          nodes {
+            id
+            title
+            institution
+            logo {
+              asset {
+                gatsbyImageData
+              }
+            }
+            location
+            _rawDescription
+            datefrom
+            dateto
+          }
+        }
+      }
+    `);
 
   return (
     <div className="holder">
@@ -114,15 +104,15 @@ const Home = (): ReactElement => {
         </div>
         <div
           className="block"
-          style={{ display: 'flex', flexDirection: 'column' }}
+          style={{ display: "flex", flexDirection: "column" }}
         >
           <h1>
-            {general?.name}
-            {' '}
-            {general?.lastname}
+            {general?.name} {general?.lastname}
           </h1>
           {general?._rawDescription && (
-          <PortableText value={general?._rawDescription as PortableTextProps['value']} />
+            <PortableText
+              value={general?._rawDescription as PortableTextProps["value"]}
+            />
           )}
         </div>
       </div>
@@ -190,11 +180,11 @@ const Home = (): ReactElement => {
           </div>
         </aside>
         <main>
-          <div className="block" style={{ breakBefore: 'page' }}>
+          <div className="block" style={{ breakBefore: "page" }}>
             <h2>Work</h2>
             <div className="experiences">
               {work.nodes.map((item) => (
-                <div key={item.id} style={{ breakInside: 'avoid' }}>
+                <div key={item.id} style={{ breakInside: "avoid" }}>
                   <div className="header">
                     <div>
                       {item.logo?.asset ? (
@@ -209,33 +199,26 @@ const Home = (): ReactElement => {
                     <div>
                       <h3>{item.title}</h3>
                       <div>
-                        {item.organization}
-                        ,
-                        {' '}
-                        {item.location}
+                        {item.organization}, {item.location}
                       </div>
                       <small>
                         <i>
                           <span>
                             {dayjs(`${item.datefrom}`)
-                              .format('MMM YYYY')
+                              .format("MMM YYYY")
                               .toLowerCase()}
-                          </span>
-                          {' '}
-                          -
-                          {' '}
+                          </span>{" "}
+                          -{" "}
                           <span>
                             {item.dateto
                               ? dayjs(`${item.dateto}`)
-                                .format('MMM YYYY')
-                                .toLowerCase()
-                              : 'Present'}
-                          </span>
-                          {' '}
+                                  .format("MMM YYYY")
+                                  .toLowerCase()
+                              : "Present"}
+                          </span>{" "}
                           {item.dateto ? (
                             <>
-                              -
-                              {' '}
+                              -{" "}
                               <span>
                                 <strong>
                                   {difference(
@@ -247,14 +230,10 @@ const Home = (): ReactElement => {
                             </>
                           ) : (
                             <>
-                              -
-                              {' '}
+                              -{" "}
                               <span>
                                 <strong>
-                                  {difference(
-                                    dayjs(item.datefrom),
-                                    dayjs(),
-                                  )}
+                                  {difference(dayjs(item.datefrom), dayjs())}
                                 </strong>
                               </span>
                             </>
@@ -262,7 +241,11 @@ const Home = (): ReactElement => {
                         </i>
                       </small>
                       {item._rawDescription && (
-                        <PortableText value={item._rawDescription as PortableTextProps['value']} />
+                        <PortableText
+                          value={
+                            item._rawDescription as PortableTextProps["value"]
+                          }
+                        />
                       )}
                     </div>
                   </div>
@@ -271,11 +254,11 @@ const Home = (): ReactElement => {
             </div>
           </div>
 
-          <div className="block" style={{ breakBefore: 'page' }}>
+          <div className="block" style={{ breakBefore: "page" }}>
             <h2>Education</h2>
             <div className="experiences">
               {education.nodes.map((item) => (
-                <div key={item.id} style={{ breakInside: 'avoid' }}>
+                <div key={item.id} style={{ breakInside: "avoid" }}>
                   <div className="header">
                     <div>
                       {item.logo?.asset ? (
@@ -290,33 +273,26 @@ const Home = (): ReactElement => {
                     <div>
                       <h3>{item.title}</h3>
                       <div>
-                        {item.institution}
-                        ,
-                        {' '}
-                        {item.location}
+                        {item.institution}, {item.location}
                       </div>
                       <small>
                         <i>
                           <span>
                             {dayjs(`${item.datefrom}`)
-                              .format('MMM YYYY')
+                              .format("MMM YYYY")
                               .toLowerCase()}
-                          </span>
-                          {' '}
-                          -
-                          {' '}
+                          </span>{" "}
+                          -{" "}
                           <span>
                             {item.dateto
                               ? dayjs(`${item.dateto}`)
-                                .format('MMM YYYY')
-                                .toLowerCase()
-                              : 'Present'}
-                          </span>
-                          {' '}
+                                  .format("MMM YYYY")
+                                  .toLowerCase()
+                              : "Present"}
+                          </span>{" "}
                           {item.dateto ? (
                             <>
-                              -
-                              {' '}
+                              -{" "}
                               <span>
                                 <strong>
                                   {difference(
@@ -328,8 +304,7 @@ const Home = (): ReactElement => {
                             </>
                           ) : (
                             <>
-                              -
-                              {' '}
+                              -{" "}
                               <span>
                                 <strong>
                                   {difference(dayjs(item.datefrom), dayjs())}
@@ -340,7 +315,11 @@ const Home = (): ReactElement => {
                         </i>
                       </small>
                       {item._rawDescription && (
-                      <PortableText value={item._rawDescription as PortableTextProps['value']} />
+                        <PortableText
+                          value={
+                            item._rawDescription as PortableTextProps["value"]
+                          }
+                        />
                       )}
                     </div>
                   </div>

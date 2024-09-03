@@ -1,9 +1,9 @@
-import dayjs, { Dayjs } from 'dayjs';
+import dayjs, { Dayjs } from "dayjs";
 
-import { plural } from '..';
+import { plural } from "..";
 
 export const difference = (datefrom: Dayjs, dateto: Dayjs): string => {
-  const [ date ] = Object.values(dayjs.duration(dateto.diff(datefrom)));
+  const [date] = Object.values(dayjs.duration(dateto.diff(datefrom)));
 
   let { years, months } = date;
   const { days } = date;
@@ -18,16 +18,16 @@ export const difference = (datefrom: Dayjs, dateto: Dayjs): string => {
   }
 
   if (!years && !months) {
-    return '';
+    return "";
   }
 
   if (!years && months) {
-    return plural(months, 'month');
+    return plural(months, "month");
   }
 
   if (years && !months) {
-    return plural(years, 'year');
+    return plural(years, "year");
   }
 
-  return `${plural(years, 'year')} ${plural(months, 'month')}`;
+  return `${plural(years, "year")} ${plural(months, "month")}`;
 };
