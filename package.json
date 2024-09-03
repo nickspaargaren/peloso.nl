@@ -9,8 +9,7 @@
     "test": "turbo run test"
   },
   "devDependencies": {
-    "turbo": "^2.1.0",
-    "typescript": "^4.9.5"
+    "turbo": "^2.1.0"
   },
   "workspaces": [
     "backend",
