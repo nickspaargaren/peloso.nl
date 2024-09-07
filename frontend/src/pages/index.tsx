@@ -94,14 +94,12 @@ const Home = (): ReactElement => {
   return (
     <div className="holder">
       <div className="content header">
-        <div className="profileimage">
-          {general?.image?.asset && (
-            <GatsbyImage
-              image={general.image.asset.gatsbyImageData}
-              alt={`${general?.name} ${general?.lastname}`}
-            />
-          )}
-        </div>
+        {general?.image?.asset && (
+          <GatsbyImage
+            image={general.image.asset.gatsbyImageData}
+            alt={`${general?.name} ${general?.lastname}`}
+          />
+        )}
         <div
           className="block"
           style={{ display: "flex", flexDirection: "column" }}
