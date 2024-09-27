@@ -13,3 +13,7 @@ updates:
         patterns:
           - "sanity"
           - "@sanity/*"
+- package-ecosystem: "github-actions"
+  directory: "/"
+  schedule:
+    interval: "weekly"
