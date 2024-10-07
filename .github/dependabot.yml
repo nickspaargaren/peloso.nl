@@ -13,6 +13,14 @@ updates:
         patterns:
           - "sanity"
           - "@sanity/*"
+      typescript-eslint:
+        patterns:
+          - "typescript"
+          - "typescript-eslint"
+          - "eslint"
+          - "eslint-*"
+          - "@eslint/*"
+          - "@types/eslint__js"
 - package-ecosystem: "github-actions"
   directory: "/"
   schedule:
