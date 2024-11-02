@@ -9,3 +9,7 @@ test("Expect correct plural output with 2 months", () => {
 test("Expect correct plural output with 1 month", () => {
   expect(plural(1, "month")).toEqual("1 month");
 });
+
+test("Expect correct plural output without an amount", () => {
+  expect(plural(0, "month")).toEqual("");
+});
