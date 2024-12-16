@@ -5,6 +5,7 @@
     "start": "sanity start",
     "build": "sanity build",
     "dev": "sanity dev",
+    "lint": "eslint .",
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
@@ -14,5 +15,9 @@
     "react-icons": "^5.4.0",
     "sanity": "^3.66.1",
     "styled-components": "^6.1.13"
+  },
+  "devDependencies": {
+    "@sanity/eslint-config-studio": "^5.0.0",
+    "eslint": "^9.17.0"
   }
 }
