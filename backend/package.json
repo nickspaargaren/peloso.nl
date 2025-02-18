@@ -18,6 +18,6 @@
   },
   "devDependencies": {
     "@sanity/eslint-config-studio": "^5.0.0",
-    "eslint": "^9.19.0"
+    "eslint": "^9.20.1"
   }
 }
