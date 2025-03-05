@@ -25,7 +25,6 @@ updates:
           - "eslint"
           - "eslint-*"
           - "@eslint/*"
-          - "@types/eslint__js"
     ignore:
       - dependency-name: "react"
         versions: [">18"]
