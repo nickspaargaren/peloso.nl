@@ -29,8 +29,6 @@ const Home = (): ReactElement => {
               gatsbyImageData
             }
           }
-          phone
-          email
         }
 
         skills: allSanitySkills {
@@ -135,14 +133,6 @@ const Home = (): ReactElement => {
               <div>
                 <small>Date of birth</small>
                 {general?.birthdate}
-              </div>
-              <div>
-                <small>Phone number</small>
-                {general?.phone}
-              </div>
-              <div>
-                <small>Email</small>
-                <a href={`mailto:${general?.email}`}>{general?.email}</a>
               </div>
             </div>
           </div>
