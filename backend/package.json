@@ -19,5 +19,8 @@
   "devDependencies": {
     "@sanity/eslint-config-studio": "^5.0.2",
     "eslint": "^9.36.0"
+  },
+  "engines": {
+    "node": ">=22"
   }
 }
