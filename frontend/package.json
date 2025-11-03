@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@portabletext/react": "^4.0.3",
-    "dayjs": "^1.11.18",
+    "dayjs": "^1.11.19",
     "gatsby": "^5.15.0",
     "gatsby-plugin-image": "^3.15.0",
     "gatsby-plugin-sharp": "^5.15.0",
