@@ -1,11 +1,11 @@
-import { expect, test } from "vitest";
+import { expect, it } from "vitest";
 
 import { plural } from "./plural";
 
-test("Expect correct plural output with 2 months", () => {
-  expect(plural(2, "month")).toEqual("2 months");
-});
-
-test("Expect correct plural output with 1 month", () => {
-  expect(plural(1, "month")).toEqual("1 month");
+it.each([
+  { count: 2, expected: "2 months" },
+  { count: 1, expected: "1 month" },
+  { count: 0, expected: "" },
+])("Expect correct plural output with $expected", ({ count, expected }) => {
+  expect(plural(count, "month")).toEqual(expected);
 });
