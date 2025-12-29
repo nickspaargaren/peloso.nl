@@ -10,8 +10,8 @@
   },
   "dependencies": {
     "@sanity/orderable-document-list": "^1.4.1",
-    "react": "^18.3",
-    "react-dom": "^18.3",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
     "react-icons": "^5.5.0",
     "sanity": "^4.21.1",
     "styled-components": "^6.1.19"
