@@ -3240,13 +3240,13 @@
   dependencies:
     "@portabletext/plugin-input-rule" "^2.0.7"
 
-"@portabletext/react@^6.0.0":
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/@portabletext/react/-/react-6.0.0.tgz#1b363488ef8ba10bf3ab6437c813899f313d4542"
-  integrity sha512-8jzmFruC6fhC8A47c+RdiFfldzRq/rRW/FwRsr5ZMeNeCf3S0dXVlM/LJQRWH5JLQXbH3oxINN1UV2mbuZQJ9w==
+"@portabletext/react@^6.0.0", "@portabletext/react@^6.0.2":
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/@portabletext/react/-/react-6.0.2.tgz#d953b2a62d3f0f300056a8e00c8cbc73bbe5eae8"
+  integrity sha512-qE3/Fg8PqzGzZ6+lxVXKPDqthJTRG3T1R0R6wrUCVAYeC5e0JtXWwhOiWa0daLG9TEOwn2SUeB2SuWxQlTq+5g==
   dependencies:
-    "@portabletext/toolkit" "^5.0.0"
-    "@portabletext/types" "^4.0.0"
+    "@portabletext/toolkit" "^5.0.1"
+    "@portabletext/types" "^4.0.1"
 
 "@portabletext/sanity-bridge@^2.0.0":
   version "2.0.0"
@@ -3270,17 +3270,17 @@
     "@portabletext/toolkit" "^5.0.0"
     "@portabletext/types" "^4.0.0"
 
-"@portabletext/toolkit@^5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@portabletext/toolkit/-/toolkit-5.0.0.tgz#90d6eced612f4bba5d397813801c684f6b0a00cf"
-  integrity sha512-jcDOv1RKO/j08pdnc/6i5tULcAzEYCR41XDVYOqmmX8bvEJbWJabhpVjHT1ls6p27v9gtA4NG2SO5xdMpgWSQQ==
+"@portabletext/toolkit@^5.0.0", "@portabletext/toolkit@^5.0.1":
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/@portabletext/toolkit/-/toolkit-5.0.1.tgz#42eb9584e934d229c40f7e8cc51a6a6a2c811044"
+  integrity sha512-qcwnWd15J2Ziwi0YfWHRx+DRqp87cPb+EBcYuEbDW0ChZwwxCdfIjDazzFpQeXnqhJn8own1c8UB3iHB61DiWg==
   dependencies:
-    "@portabletext/types" "^4.0.0"
+    "@portabletext/types" "^4.0.1"
 
-"@portabletext/types@^4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@portabletext/types/-/types-4.0.0.tgz#f8b6d9cc64cfe43e3cd37c26eb76a82574ad4d94"
-  integrity sha512-mEoN82OQckrshqRx8idp+x8B/OpMfUMSjQp1w1wZFM3hf8cplGhK59Sa/UuGU6XdgAnFq90vJtnj5ejOmZmhvw==
+"@portabletext/types@^4.0.0", "@portabletext/types@^4.0.1":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@portabletext/types/-/types-4.0.1.tgz#5738df350641c66f132b5663632f2bab79ebb68d"
+  integrity sha512-L8PZjVjmdKpW+82c1oNqGMqCOtQD2xORqJfr6Is7X5XXbz38eLYY79IM/1ok+Esf/iGOPtEYORdcf0ETmsWYew==
 
 "@rexxars/react-json-inspector@^9.0.1":
   version "9.0.1"
