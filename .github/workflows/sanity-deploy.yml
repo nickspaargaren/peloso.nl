@@ -15,7 +15,7 @@ jobs:
           node-version: 24
           cache: "yarn"
       - name: Install modules
-        run: yarn install
+        run: yarn install --frozen-lockfile
       - name: Deploy Sanity
         env:
           SANITY_AUTH_TOKEN: ${{ secrets.SANITY_AUTH_TOKEN }}
