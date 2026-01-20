@@ -11,7 +11,7 @@
     "clean": "turbo run clean"
   },
   "devDependencies": {
-    "turbo": "^2.7.2"
+    "turbo": "^2.7.5"
   },
   "workspaces": [
     "backend",
