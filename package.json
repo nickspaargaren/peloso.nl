@@ -1,23 +1,26 @@
 {
   "name": "peloso.nl",
   "private": true,
-  "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "lint:fix": "turbo run lint:fix",
-    "fmt": "turbo run fmt",
-    "fmt:check": "turbo run fmt:check",
-    "test": "turbo run test",
-    "clean": "turbo run clean"
-  },
-  "devDependencies": {
-    "turbo": "^2.8.0"
-  },
   "workspaces": [
     "backend",
     "frontend"
   ],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "oxlint --type-aware --type-check",
+    "lint:fix": "oxlint --fix",
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check",
+    "test": "turbo run test",
+    "clean": "turbo run clean"
+  },
+  "devDependencies": {
+    "oxfmt": "^0.27.0",
+    "oxlint": "^1.42.0",
+    "oxlint-tsgolint": "^0.11.4",
+    "turbo": "^2.8.0"
+  },
   "engines": {
     "node": "24"
   },
