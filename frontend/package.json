@@ -5,9 +5,10 @@
     "dev": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "lint": "eslint '**/*.{ts,tsx}'",
-    "lint:fix": "eslint '**/*.{ts,tsx}' --fix",
-    "check-types": "tsc --noEmit",
+    "lint": "oxlint --type-aware --type-check",
+    "lint:fix": "oxlint --fix",
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check",
     "test": "vitest run",
     "clean": "gatsby clean"
   },
@@ -24,13 +25,10 @@
     "react-dom": "^19.2.4"
   },
   "devDependencies": {
-    "@eslint/js": "^9.16.0",
-    "eslint": "^9.39.2",
-    "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-prettier": "^5.5.5",
-    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "oxfmt": "^0.27.0",
+    "oxlint": "^1.42.0",
+    "oxlint-tsgolint": "^0.11.4",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.54.0",
     "vitest": "^4.0.15"
   },
   "engines": {
