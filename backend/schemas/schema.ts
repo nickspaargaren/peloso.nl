@@ -1,8 +1,15 @@
-import education from "./education";
-import general from "./general";
-import interests from "./interests";
-import languages from "./languages";
-import skills from "./skills";
-import work from "./work";
+import { educationSchema } from "./education";
+import { generalSchema } from "./general";
+import { interestsSchema } from "./interests";
+import { languagesSchema } from "./languages";
+import { skillsSchema } from "./skills";
+import { workSchema } from "./work";
 
-export default [skills, languages, work, education, interests, general];
+export default [
+  skillsSchema,
+  languagesSchema,
+  workSchema,
+  educationSchema,
+  interestsSchema,
+  generalSchema,
+];
