@@ -1,7 +1,7 @@
 import { orderableDocumentListDeskItem } from '@sanity/orderable-document-list';
 import { AiOutlineComment, AiOutlineContacts } from 'react-icons/ai';
 import { defineConfig } from 'sanity';
-import { structureTool } from 'sanity/structure';
+import { structureTool, type StructureBuilder, type StructureResolverContext } from 'sanity/structure';
 
 import schemas from './schemas/schema';
 
@@ -12,9 +12,10 @@ export default defineConfig({
   dataset: 'production',
   plugins: [
     structureTool({
-      structure: (S, context) => S.list()
-        .title('Content')
-        .items([
+      structure: (S: StructureBuilder, context: StructureResolverContext) =>
+        S.list()
+          .title('Content')
+          .items([
           orderableDocumentListDeskItem({
             title: 'Languages',
             type: 'languages',
