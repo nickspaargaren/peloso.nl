@@ -22,13 +22,6 @@ updates:
         patterns:
           - "sanity"
           - "@sanity/*"
-      typescript-eslint:
-        patterns:
-          - "typescript"
-          - "typescript-eslint"
-          - "eslint"
-          - "eslint-*"
-          - "@eslint/*"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:

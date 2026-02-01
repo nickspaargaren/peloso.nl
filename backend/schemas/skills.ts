@@ -1,15 +1,15 @@
-import { AiOutlineFormatPainter } from 'react-icons/ai';
+import { AiOutlineFormatPainter } from "react-icons/ai";
 
 export default {
-  name: 'skills',
-  title: 'Skills',
-  type: 'document',
+  name: "skills",
+  title: "Skills",
+  type: "document",
   icon: AiOutlineFormatPainter,
   fields: [
     {
-      name: 'title',
-      title: 'Title',
-      type: 'string',
+      name: "title",
+      title: "Title",
+      type: "string",
     },
   ],
 };

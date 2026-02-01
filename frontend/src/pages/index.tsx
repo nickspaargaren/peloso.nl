@@ -30,14 +30,14 @@ const Home = (): ReactElement => {
             }
           }
         }
-
+      
         skills: allSanitySkills {
           nodes {
             id
             title
           }
         }
-
+      
         languages: allSanityLanguages(sort: { orderRank: ASC }) {
           nodes {
             id
@@ -45,14 +45,14 @@ const Home = (): ReactElement => {
             subtitle
           }
         }
-
+      
         interests: allSanityInterests {
           nodes {
             id
             title
           }
         }
-
+      
         work: allSanityWork(sort: { datefrom: DESC }) {
           nodes {
             id
@@ -69,7 +69,7 @@ const Home = (): ReactElement => {
             dateto
           }
         }
-
+      
         education: allSanityEducation(sort: { datefrom: DESC }) {
           nodes {
             id
@@ -98,17 +98,12 @@ const Home = (): ReactElement => {
             alt={`${general?.name} ${general?.lastname}`}
           />
         )}
-        <div
-          className="block"
-          style={{ display: "flex", flexDirection: "column" }}
-        >
+        <div className="block" style={{ display: "flex", flexDirection: "column" }}>
           <h1>
             {general?.name} {general?.lastname}
           </h1>
           {general?._rawDescription && (
-            <PortableText
-              value={general?._rawDescription as PortableTextProps["value"]}
-            />
+            <PortableText value={general?._rawDescription as PortableTextProps["value"]} />
           )}
         </div>
       </div>
@@ -191,17 +186,11 @@ const Home = (): ReactElement => {
                       </div>
                       <small>
                         <i>
-                          <span>
-                            {dayjs(`${item.datefrom}`)
-                              .format("MMM YYYY")
-                              .toLowerCase()}
-                          </span>{" "}
+                          <span>{dayjs(`${item.datefrom}`).format("MMM YYYY").toLowerCase()}</span>{" "}
                           -{" "}
                           <span>
                             {item.dateto
-                              ? dayjs(`${item.dateto}`)
-                                  .format("MMM YYYY")
-                                  .toLowerCase()
+                              ? dayjs(`${item.dateto}`).format("MMM YYYY").toLowerCase()
                               : "Present"}
                           </span>{" "}
                           {item.dateto ? (
@@ -209,10 +198,7 @@ const Home = (): ReactElement => {
                               -{" "}
                               <span>
                                 <strong>
-                                  {difference(
-                                    dayjs(item.datefrom),
-                                    dayjs(item.dateto),
-                                  )}
+                                  {difference(dayjs(item.datefrom), dayjs(item.dateto))}
                                 </strong>
                               </span>
                             </>
@@ -220,20 +206,14 @@ const Home = (): ReactElement => {
                             <>
                               -{" "}
                               <span>
-                                <strong>
-                                  {difference(dayjs(item.datefrom), dayjs())}
-                                </strong>
+                                <strong>{difference(dayjs(item.datefrom), dayjs())}</strong>
                               </span>
                             </>
                           )}
                         </i>
                       </small>
                       {item._rawDescription && (
-                        <PortableText
-                          value={
-                            item._rawDescription as PortableTextProps["value"]
-                          }
-                        />
+                        <PortableText value={item._rawDescription as PortableTextProps["value"]} />
                       )}
                     </div>
                   </div>
@@ -265,17 +245,11 @@ const Home = (): ReactElement => {
                       </div>
                       <small>
                         <i>
-                          <span>
-                            {dayjs(`${item.datefrom}`)
-                              .format("MMM YYYY")
-                              .toLowerCase()}
-                          </span>{" "}
+                          <span>{dayjs(`${item.datefrom}`).format("MMM YYYY").toLowerCase()}</span>{" "}
                           -{" "}
                           <span>
                             {item.dateto
-                              ? dayjs(`${item.dateto}`)
-                                  .format("MMM YYYY")
-                                  .toLowerCase()
+                              ? dayjs(`${item.dateto}`).format("MMM YYYY").toLowerCase()
                               : "Present"}
                           </span>{" "}
                           {item.dateto ? (
@@ -283,10 +257,7 @@ const Home = (): ReactElement => {
                               -{" "}
                               <span>
                                 <strong>
-                                  {difference(
-                                    dayjs(item.datefrom),
-                                    dayjs(item.dateto),
-                                  )}
+                                  {difference(dayjs(item.datefrom), dayjs(item.dateto))}
                                 </strong>
                               </span>
                             </>
@@ -294,20 +265,14 @@ const Home = (): ReactElement => {
                             <>
                               -{" "}
                               <span>
-                                <strong>
-                                  {difference(dayjs(item.datefrom), dayjs())}
-                                </strong>
+                                <strong>{difference(dayjs(item.datefrom), dayjs())}</strong>
                               </span>
                             </>
                           )}
                         </i>
                       </small>
                       {item._rawDescription && (
-                        <PortableText
-                          value={
-                            item._rawDescription as PortableTextProps["value"]
-                          }
-                        />
+                        <PortableText value={item._rawDescription as PortableTextProps["value"]} />
                       )}
                     </div>
                   </div>
