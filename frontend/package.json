@@ -5,10 +5,6 @@
     "dev": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "lint": "oxlint --type-aware --type-check",
-    "lint:fix": "oxlint --fix",
-    "fmt": "oxfmt",
-    "fmt:check": "oxfmt --check",
     "test": "vitest run",
     "clean": "gatsby clean"
   },
@@ -25,9 +21,6 @@
     "react-dom": "^19.2.4"
   },
   "devDependencies": {
-    "oxfmt": "^0.27.0",
-    "oxlint": "^1.42.0",
-    "oxlint-tsgolint": "^0.11.4",
     "typescript": "^5.9.3",
     "vitest": "^4.0.15"
   },
