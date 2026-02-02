@@ -4,18 +4,14 @@
     "build": {
       "dependsOn": ["^build"]
     },
-    "lint": {
-      "dependsOn": ["^lint"]
+    "//#lint": {},
+    "//#lint:fix": {
+      "cache": false
     },
-    "lint:fix": {
-      "dependsOn": ["^lint:fix"]
+    "//#fmt": {
+      "cache": false
     },
-    "fmt": {
-      "dependsOn": ["^fmt"]
-    },
-    "fmt:check": {
-      "dependsOn": ["^fmt:check"]
-    },
+    "//#fmt:check": {},
     "test": {
       "dependsOn": ["^test"]
     },

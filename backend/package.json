@@ -4,11 +4,7 @@
   "scripts": {
     "start": "sanity start",
     "build": "sanity build",
-    "dev": "sanity dev",
-    "lint": "oxlint --type-aware --type-check",
-    "lint:fix": "oxlint --fix",
-    "fmt": "oxfmt",
-    "fmt:check": "oxfmt --check"
+    "dev": "sanity dev"
   },
   "dependencies": {
     "@sanity/orderable-document-list": "^1.5.0",
@@ -17,11 +13,6 @@
     "react-icons": "^5.5.0",
     "sanity": "^5.7.0",
     "styled-components": "^6.3.8"
-  },
-  "devDependencies": {
-    "oxfmt": "^0.27.0",
-    "oxlint": "^1.42.0",
-    "oxlint-tsgolint": "^0.11.4"
   },
   "engines": {
     "node": "24"
