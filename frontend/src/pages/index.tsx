@@ -1,11 +1,11 @@
 import "../index.css";
 
-import { PortableText, PortableTextProps } from "@portabletext/react";
+import { PortableText, type PortableTextProps } from "@portabletext/react";
 import dayjs from "dayjs";
 import duration from "dayjs/plugin/duration";
 import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
-import React, { ReactElement } from "react";
+import React, { type ReactElement } from "react";
 
 import { difference } from "../utils";
 
