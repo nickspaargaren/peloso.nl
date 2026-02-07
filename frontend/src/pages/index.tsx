@@ -30,14 +30,14 @@ const Home = (): ReactElement => {
             }
           }
         }
-      
+
         skills: allSanitySkills {
           nodes {
             id
             title
           }
         }
-      
+
         languages: allSanityLanguages(sort: { orderRank: ASC }) {
           nodes {
             id
@@ -45,14 +45,14 @@ const Home = (): ReactElement => {
             subtitle
           }
         }
-      
+
         interests: allSanityInterests {
           nodes {
             id
             title
           }
         }
-      
+
         work: allSanityWork(sort: { datefrom: DESC }) {
           nodes {
             id
@@ -69,7 +69,7 @@ const Home = (): ReactElement => {
             dateto
           }
         }
-      
+
         education: allSanityEducation(sort: { datefrom: DESC }) {
           nodes {
             id
