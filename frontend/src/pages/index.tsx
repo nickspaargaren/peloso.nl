@@ -3,7 +3,7 @@ import "../index.css";
 import { PortableText, type PortableTextProps } from "@portabletext/react";
 import dayjs from "dayjs";
 import duration from "dayjs/plugin/duration";
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql, useStaticQuery, type HeadFC } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import React, { type ReactElement } from "react";
 
@@ -288,11 +288,11 @@ const Home = (): ReactElement => {
 
 export default Home;
 
-export function Head() {
+export const Head: HeadFC = (): ReactElement => {
   return (
     <>
       <title>Danielle Peloso</title>
       <meta name="description" content="Curriculum Vitae" />
     </>
   );
-}
+};
