@@ -5,7 +5,7 @@
     "dev": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "test": "vitest run",
+    "test": "vitest run --coverage",
     "clean": "gatsby clean"
   },
   "dependencies": {
@@ -21,6 +21,7 @@
     "react-dom": "^19.2.4"
   },
   "devDependencies": {
+    "@vitest/coverage-v8": "^4.0.18",
     "typescript": "^5.9.3",
     "vitest": "^4.0.15"
   },

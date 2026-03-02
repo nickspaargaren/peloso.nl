@@ -26,6 +26,10 @@ test("Expect correct difference with 1 year 1 month", () => {
   expect(difference(dayjs("2018-01-01"), dayjs("2019-02-01"))).toEqual("1 year 1 month");
 });
 
+test("Expect correct difference with 11 months + 3 days (rounds to 1 year)", () => {
+  expect(difference(dayjs("2018-01-01"), dayjs("2018-12-04"))).toEqual("1 year");
+});
+
 test("Expect correct difference (no output) without a difference", () => {
   expect(difference(dayjs("2022-01-01"), dayjs("2022-01-01"))).toEqual("");
 });
