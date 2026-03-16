@@ -1,0 +1,6 @@
+{
+  "rules": {
+    "typescript/ban-ts-comment": "error",
+    "typescript/no-deprecated": "error"
+  }
+}
