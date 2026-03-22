@@ -8,18 +8,18 @@ export const languagesSchema = defineType({
     defineField({
       name: "title",
       title: "Title",
-      type: "string",
+      type: "string"
     }),
     defineField({
       name: "subtitle",
       title: "Proficiency",
-      type: "string",
+      type: "string"
     }),
     defineField({
       name: "orderRank",
       title: "Order",
       type: "string",
-      hidden: true,
-    }),
-  ],
+      hidden: true
+    })
+  ]
 });

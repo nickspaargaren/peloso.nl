@@ -3,7 +3,7 @@ import React from "react";
 
 export const onRenderBody: GatsbySSR["onRenderBody"] = ({
   setHtmlAttributes,
-  setPostBodyComponents,
+  setPostBodyComponents
 }) => {
   setHtmlAttributes({ lang: "en" });
   setPostBodyComponents([
@@ -13,6 +13,6 @@ export const onRenderBody: GatsbySSR["onRenderBody"] = ({
       src="/stats/js/script.js"
       data-api="/stats/api/event"
       data-domain="peloso.nl"
-    />,
+    />
   ]);
 };

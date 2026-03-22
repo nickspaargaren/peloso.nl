@@ -1,4 +1,5 @@
 {
   "$schema": "./node_modules/oxfmt/configuration_schema.json",
-  "ignorePatterns": ["**/public/**", "**/.cache/**", "**/dist/**", "**/.sanity/**"]
+  "ignorePatterns": ["**/public/**", "**/.cache/**", "**/dist/**", "**/.sanity/**"],
+  "trailingComma": "none"
 }

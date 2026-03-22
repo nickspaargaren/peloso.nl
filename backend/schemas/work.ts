@@ -11,25 +11,25 @@ export const workSchema = defineType({
     defineField({
       name: "title",
       title: "Title",
-      type: "string",
+      type: "string"
     }),
     defineField({
       name: "organization",
       title: "Organization",
-      type: "string",
+      type: "string"
     }),
     defineField({
       name: "logo",
       title: "Organization logo",
       type: "image",
       options: {
-        hotspot: true,
-      },
+        hotspot: true
+      }
     }),
     defineField({
       name: "location",
       title: "Location",
-      type: "string",
+      type: "string"
     }),
     defineField({
       title: "Description",
@@ -37,25 +37,25 @@ export const workSchema = defineType({
       type: "array",
       of: [
         defineArrayMember({
-          type: "block",
-        }),
-      ],
+          type: "block"
+        })
+      ]
     }),
     defineField({
       name: "datefrom",
       title: "Date from",
       type: "date",
       options: {
-        dateFormat: "MM-YYYY",
-      },
+        dateFormat: "MM-YYYY"
+      }
     }),
     defineField({
       name: "dateto",
       title: "Date to",
       type: "date",
       options: {
-        dateFormat: "MM-YYYY",
-      },
-    }),
-  ],
+        dateFormat: "MM-YYYY"
+      }
+    })
+  ]
 });

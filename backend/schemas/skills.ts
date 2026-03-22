@@ -11,7 +11,7 @@ export const skillsSchema = defineType({
     defineField({
       name: "title",
       title: "Title",
-      type: "string",
-    }),
-  ],
+      type: "string"
+    })
+  ]
 });
