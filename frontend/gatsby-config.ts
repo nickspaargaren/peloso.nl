@@ -2,10 +2,10 @@ import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
   graphqlTypegen: {
-    generateOnBuild: true,
+    generateOnBuild: true
   },
   siteMetadata: {
-    title: "peloso.nl",
+    title: "peloso.nl"
   },
   trailingSlash: "never",
   plugins: [
@@ -13,8 +13,8 @@ const config: GatsbyConfig = {
       resolve: "gatsby-source-sanity",
       options: {
         projectId: "ozsvr5j0",
-        dataset: "production",
-      },
+        dataset: "production"
+      }
     },
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
@@ -23,10 +23,10 @@ const config: GatsbyConfig = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "images",
-        path: "./src/images/",
-      },
-    },
-  ],
+        path: "./src/images/"
+      }
+    }
+  ]
 };
 
 export default config;

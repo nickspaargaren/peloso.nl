@@ -4,7 +4,7 @@ import { defineConfig } from "sanity";
 import {
   structureTool,
   type StructureBuilder,
-  type StructureResolverContext,
+  type StructureResolverContext
 } from "sanity/structure";
 
 import schemas from "./schemas/schema";
@@ -25,7 +25,7 @@ export default defineConfig({
               type: "languages",
               icon: AiOutlineComment,
               S,
-              context,
+              context
             }),
             S.listItem()
               .title("General")
@@ -35,11 +35,11 @@ export default defineConfig({
               const id = listItem.getId();
               if (!id) return;
               return !["general"].includes(id) && !["languages"].includes(id);
-            }),
-          ]),
-    }),
+            })
+          ])
+    })
   ],
   schema: {
-    types: schemas,
-  },
+    types: schemas
+  }
 });

@@ -10,12 +10,12 @@ export const generalSchema = defineType({
     defineField({
       name: "name",
       title: "Name",
-      type: "string",
+      type: "string"
     }),
     defineField({
       name: "lastname",
       title: "Lastname",
-      type: "string",
+      type: "string"
     }),
     defineField({
       title: "Description",
@@ -23,37 +23,37 @@ export const generalSchema = defineType({
       type: "array",
       of: [
         defineArrayMember({
-          type: "block",
-        }),
-      ],
+          type: "block"
+        })
+      ]
     }),
     defineField({
       name: "birthdate",
       title: "Date of birth",
-      type: "date",
+      type: "date"
     }),
     defineField({
       name: "birthplace",
       title: "Place of birth",
-      type: "string",
+      type: "string"
     }),
     defineField({
       name: "nationality",
       title: "Nationality",
-      type: "string",
+      type: "string"
     }),
     defineField({
       name: "residence",
       title: "Residence",
-      type: "string",
+      type: "string"
     }),
     defineField({
       name: "image",
       title: "Profile image",
       type: "image",
       options: {
-        hotspot: true,
-      },
-    }),
-  ],
+        hotspot: true
+      }
+    })
+  ]
 });

@@ -11,5 +11,5 @@ export default [
   workSchema,
   educationSchema,
   interestsSchema,
-  generalSchema,
+  generalSchema
 ];
