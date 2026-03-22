@@ -11,25 +11,25 @@ export const educationSchema = defineType({
     defineField({
       name: "title",
       title: "Title",
-      type: "string",
+      type: "string"
     }),
     defineField({
       name: "institution",
       title: "Institution",
-      type: "string",
+      type: "string"
     }),
     defineField({
       name: "logo",
       title: "Institution logo",
       type: "image",
       options: {
-        hotspot: true,
-      },
+        hotspot: true
+      }
     }),
     defineField({
       name: "location",
       title: "Place of Education",
-      type: "string",
+      type: "string"
     }),
     defineField({
       title: "Description",
@@ -37,25 +37,25 @@ export const educationSchema = defineType({
       type: "array",
       of: [
         defineArrayMember({
-          type: "block",
-        }),
-      ],
+          type: "block"
+        })
+      ]
     }),
     defineField({
       name: "datefrom",
       title: "Date from",
       type: "date",
       options: {
-        dateFormat: "MM-YYYY",
-      },
+        dateFormat: "MM-YYYY"
+      }
     }),
     defineField({
       name: "dateto",
       title: "Date to",
       type: "date",
       options: {
-        dateFormat: "MM-YYYY",
-      },
-    }),
-  ],
+        dateFormat: "MM-YYYY"
+      }
+    })
+  ]
 });
