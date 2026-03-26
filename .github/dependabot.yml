@@ -22,6 +22,9 @@ updates:
         patterns:
           - "sanity"
           - "@sanity/*"
+      oxlint:
+        patterns:
+          - "oxlint*"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
