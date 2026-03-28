@@ -18,8 +18,8 @@
   },
   "devDependencies": {
     "oxfmt": "^0.42.0",
-    "oxlint": "^1.56.0",
-    "oxlint-tsgolint": "^0.15.0",
+    "oxlint": "^1.57.0",
+    "oxlint-tsgolint": "^0.17.4",
     "turbo": "^2.8.20"
   },
   "engines": {
