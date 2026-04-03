@@ -24,6 +24,9 @@ jobs:
       - name: Install modules
         run: yarn install --immutable
 
+      - name: Check for duplicates
+        run: yarn dedupe --check
+
       - name: Build project & generate types
         run: yarn build
 
