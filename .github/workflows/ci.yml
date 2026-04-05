@@ -27,6 +27,9 @@ jobs:
       - name: Check for duplicates
         run: yarn dedupe --check
 
+      - name: Check package manager constraints
+        run: yarn constraints
+
       - name: Build project & generate types
         run: yarn build
 
