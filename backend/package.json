@@ -16,7 +16,7 @@
     "styled-components": "^6.4.2"
   },
   "devDependencies": {
-    "@types/react": "^19.2.14"
+    "@types/react": "^19.2.15"
   },
   "engines": {
     "node": "24"
