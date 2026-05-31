@@ -11,6 +11,10 @@ provider "cloudflare" {
   # API token will be read from CLOUDFLARE_API_TOKEN environment variable
 }
 
+locals {
+  vercel_ip = "76.76.21.21"
+}
+
 variable "zone_id" {
   description = "Cloudflare Zone ID"
   type        = string
@@ -32,7 +36,7 @@ variable "domain" {
 resource "cloudflare_dns_record" "root" {
   zone_id = var.zone_id
   name    = "@"
-  content = "76.76.21.21"
+  content = local.vercel_ip
   type    = "A"
   ttl     = 1
   proxied = true
@@ -42,7 +46,7 @@ resource "cloudflare_dns_record" "root" {
 resource "cloudflare_dns_record" "www" {
   zone_id = var.zone_id
   name    = "www"
-  content = "76.76.21.21"
+  content = local.vercel_ip
   type    = "A"
   ttl     = 1
   proxied = true
