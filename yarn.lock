@@ -8155,7 +8155,7 @@ __metadata:
     react-dom: "npm:^19.2.7"
     react-icons: "npm:^5.6.0"
     sanity: "npm:^5.28.0"
-    styled-components: "npm:^6.4.2"
+    styled-components: "npm:^6.4.3"
   languageName: unknown
   linkType: soft
 
@@ -20388,9 +20388,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"styled-components@npm:^6.4.2":
-  version: 6.4.2
-  resolution: "styled-components@npm:6.4.2"
+"styled-components@npm:^6.4.3":
+  version: 6.4.3
+  resolution: "styled-components@npm:6.4.3"
   dependencies:
     "@emotion/is-prop-valid": "npm:1.4.0"
     css-to-react-native: "npm:3.2.0"
@@ -20408,7 +20408,7 @@ __metadata:
       optional: true
     react-native:
       optional: true
-  checksum: 10c0/28a021222157ad2cb07b4e4bfb499c27fd85a5d654b97f6faefef79a7b7b10fc3a9db2b3fbc7dc926db64e8e70f86ec2e5188e711b7942585d8c173cb51e6f42
+  checksum: 10c0/158514feb0a502dfa7f95610a8270faa56be2572c12902b7bf5c2855bf9fdd5d76a5909d67dcbecf627ee40511f4161f8016b23f9fef22c14f7911337359647c
   languageName: node
   linkType: hard
 
