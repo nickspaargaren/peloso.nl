@@ -9,7 +9,7 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "@portabletext/react": "^6.0.3",
+    "@portabletext/react": "^7.0.1",
     "dayjs": "^1.11.21",
     "gatsby": "^5.16.1",
     "gatsby-plugin-image": "^3.16.0",
