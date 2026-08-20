@@ -4849,18 +4849,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@portabletext/react@npm:^6.0.3":
-  version: 6.2.0
-  resolution: "@portabletext/react@npm:6.2.0"
-  dependencies:
-    "@portabletext/toolkit": "npm:^5.0.2"
-    "@portabletext/types": "npm:^4.0.2"
-  peerDependencies:
-    react: ^18.2 || ^19
-  checksum: 10c0/6167c845ab211baed4ae1f41e0a02c6ce59f3e81c4bed64d76ad74589a056d82cf2350dfe4348134dbfb3a2aff78e62c5e26d11cfed02c360b8ff1e8d11df8d0
-  languageName: node
-  linkType: hard
-
 "@portabletext/react@npm:^7.0.1":
   version: 7.0.1
   resolution: "@portabletext/react@npm:7.0.1"
@@ -4870,6 +4858,18 @@ __metadata:
   peerDependencies:
     react: ^19
   checksum: 10c0/d48b3d04aebe491ccace5f4e8d9b308e4e2b387b6d9839ac053ddadb02c61af96b085b0b73e27ac8a746602e82c0eb682b916ffdc6afeada5f0db552396d31aa
+  languageName: node
+  linkType: hard
+
+"@portabletext/react@npm:^8.0.0":
+  version: 8.0.0
+  resolution: "@portabletext/react@npm:8.0.0"
+  dependencies:
+    "@portabletext/toolkit": "npm:^6.0.0"
+    "@portabletext/types": "npm:^4.0.2"
+  peerDependencies:
+    react: ^19
+  checksum: 10c0/72e2369861147f2f6c1e2dba5c12d265c62bd72b74ebc2731f8e0f9825ebd9e8e1186f2aeaa2c8d3ea63b74ba244e7f92ec6c9bc17bbbaf69e67b8d323afd7f8
   languageName: node
   linkType: hard
 
@@ -4907,6 +4907,15 @@ __metadata:
   dependencies:
     "@portabletext/types": "npm:^4.0.2"
   checksum: 10c0/c6786aacae35bac42c2d79bf7dde8f0f4fad52fae264348d34e7a900dc3f47da8f1f261b05c96314ae561c84464b299f100f22b94301c103cabb664b17536b64
+  languageName: node
+  linkType: hard
+
+"@portabletext/toolkit@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "@portabletext/toolkit@npm:6.0.0"
+  dependencies:
+    "@portabletext/types": "npm:^4.0.2"
+  checksum: 10c0/a4ddd2852ee37e399cbd01ca48958fd9a8b8b6406d8856ff9f280924892199df184a5f7e54fa96d90f1a07c0811eee8c7e53881b55a69b02b00ed8fb22cda72f
   languageName: node
   linkType: hard
 
@@ -11562,7 +11571,7 @@ __metadata:
   resolution: "frontend@workspace:frontend"
   dependencies:
     "@babel/core": "npm:^8.0.1"
-    "@portabletext/react": "npm:^6.0.3"
+    "@portabletext/react": "npm:^8.0.0"
     "@types/babel__core": "npm:^7"
     "@vitest/coverage-v8": "npm:^4.1.10"
     dayjs: "npm:^1.11.21"
