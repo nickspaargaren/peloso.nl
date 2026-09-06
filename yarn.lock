@@ -4861,15 +4861,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@portabletext/react@npm:^8.0.0":
-  version: 8.0.0
-  resolution: "@portabletext/react@npm:8.0.0"
+"@portabletext/react@npm:^8.0.1":
+  version: 8.0.1
+  resolution: "@portabletext/react@npm:8.0.1"
   dependencies:
     "@portabletext/toolkit": "npm:^6.0.0"
     "@portabletext/types": "npm:^4.0.2"
   peerDependencies:
     react: ^19
-  checksum: 10c0/72e2369861147f2f6c1e2dba5c12d265c62bd72b74ebc2731f8e0f9825ebd9e8e1186f2aeaa2c8d3ea63b74ba244e7f92ec6c9bc17bbbaf69e67b8d323afd7f8
+  checksum: 10c0/21bcc0d2f605435628ea7399903f8f19cdccb6070d4d5cd416bc842b18fa8e9589791aef8cba19a1c59b2ebf9a80491722b8d312aff8776720320923d1f42ef4
   languageName: node
   linkType: hard
 
@@ -11571,7 +11571,7 @@ __metadata:
   resolution: "frontend@workspace:frontend"
   dependencies:
     "@babel/core": "npm:^8.0.1"
-    "@portabletext/react": "npm:^8.0.0"
+    "@portabletext/react": "npm:^8.0.1"
     "@types/babel__core": "npm:^7"
     "@vitest/coverage-v8": "npm:^4.1.10"
     dayjs: "npm:^1.11.23"
