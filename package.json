@@ -19,8 +19,8 @@
   "devDependencies": {
     "@yarnpkg/types": "^4.0.1",
     "oxfmt": "^0.71.0",
-    "oxlint": "^1.85.0",
-    "oxlint-tsgolint": "^7.0.2002",
+    "oxlint": "^1.86.0",
+    "oxlint-tsgolint": "^7.0.2003",
     "turbo": "^2.11.5"
   },
   "engines": {
