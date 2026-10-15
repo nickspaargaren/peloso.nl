@@ -24,7 +24,7 @@
     "@babel/core": "^8.0.1",
     "@types/babel__core": "^7",
     "@vitest/coverage-v8": "^4.1.10",
-    "typescript": "^6.0.3",
+    "typescript": "^7.0.2",
     "vitest": "^4.1.10"
   },
   "engines": {
