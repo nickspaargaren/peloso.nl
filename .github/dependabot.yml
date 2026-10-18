@@ -25,6 +25,11 @@ updates:
       oxlint:
         patterns:
           - "oxlint*"
+      vitest:
+        patterns:
+          - "vite"
+          - "vitest"
+          - "@vitest/*"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
