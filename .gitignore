@@ -27,6 +27,9 @@ lib-cov
 # Coverage directory used by tools like istanbul
 coverage
 
+# Vitest artifacts
+.vitest
+
 # nyc test coverage
 .nyc_output
 
