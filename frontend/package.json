@@ -23,10 +23,10 @@
   "devDependencies": {
     "@babel/core": "^8.0.1",
     "@types/babel__core": "^7",
-    "@vitest/coverage-v8": "^5.0.5",
+    "@vitest/coverage-v8": "^5.1.0",
     "typescript": "^6.0.3",
-    "vite": "^8.2.4",
-    "vitest": "^5.0.5"
+    "vite": "^8.3.7",
+    "vitest": "^5.1.0"
   },
   "engines": {
     "node": "24"
